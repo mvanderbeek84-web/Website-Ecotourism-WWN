@@ -89,6 +89,9 @@ window.SITE = {
     aracari:         { file: "img-7744",  alt: { en: "Collared aracari", es: "Cusingo" } },
     basilisk:        { file: "img-7370",  alt: { en: "Green basilisk lizard", es: "Basilisco verde" } },
     glasswing:       { file: "2t3a5819",  alt: { en: "Glasswing butterfly", es: "Mariposa de alas de cristal" } },
+    honeycreeper:    { file: "img-2224",  alt: { en: "Shining honeycreeper on a branch", es: "Mielero luciente en una rama" } },
+    broadBilledMotmot: { file: "2t3a5717", alt: { en: "Broad-billed motmot in the forest", es: "Momoto piquiancho en el bosque" } },
+    hermit:          { file: "img-8083",  alt: { en: "Hermit hummingbird on a twig", es: "Colibrí ermitaño en una ramita" } },
     motmot:          { file: "img-1844",  alt: { en: "Motmot on a branch", es: "Momoto en una rama" } },
     owl:             { file: "img-6683",  alt: { en: "Owl perched on a branch", es: "Búho posado en una rama" } },
     tortoiseBeetle:  { file: "img-8366",  alt: { en: "Iridescent tortoise beetle", es: "Escarabajo tortuga iridiscente" } },
@@ -140,7 +143,7 @@ window.SITE = {
         closedDates: [ ]   // add days you're closed, like "2026-12-25"
       },
 
-      /* The 8 stops of the tour, in order */
+      /* The 9 stops of the tour, in order */
       stops: [
         {
           key: "park",
@@ -187,6 +190,14 @@ window.SITE = {
           text: { en: "Learn how we protect and monitor more than a dozen species of tree frog by installing breeding ponds. Try to find eggs and tadpoles of the gliding tree frog and the splendid leaf frog, some of the most threatened animals in the forest.",
                   es: "Aprende cómo protegemos y monitoreamos más de una docena de especies de ranas arborícolas instalando estanques de reproducción. Intenta encontrar huevos y renacuajos de la rana planeadora y la rana de hoja espléndida, algunos de los animales más amenazados del bosque." },
           photos: ["redEyedFrogs", "leafFrog", "glassFrogDiane", "frogEggs", "loquaciousFrogs"]
+        },
+        {
+          key: "birding",
+          tag: { en: "Birding", es: "Aves" },
+          title: { en: "Birding hotspot", es: "Paraíso para observar aves" },
+          text: { en: "This area gives birders the chance to encounter some spectacular species, like the black-crowned antpitta, ocellated antbird, semiplumbeous hawk, song wren and black hawk-eagle. More than 360 species have been observed in the area.",
+                  es: "Esta zona ofrece a los observadores de aves la oportunidad de encontrar especies espectaculares, como el tororoí coroninegro, el hormiguero ocelado, el gavilán dorsiplomizo, el soterrey canoro y el águila tirana. Se han observado más de 360 especies en la zona." },
+          photos: ["honeycreeper", "broadBilledMotmot", "hermit"]
         },
         {
           key: "arboretum",
@@ -296,7 +307,7 @@ window.SITE = {
     },
     tour: {
       eyebrow: { en: "The tour", es: "El tour" },
-      title: { en: "Eight stops, one day in the forest", es: "Ocho paradas, un día en el bosque" },
+      title: { en: "Nine stops, one day in the forest", es: "Nueve paradas, un día en el bosque" },
       intro: { en: "Follow the trail from the Work with Nature reserve to the National Park Barbilla. Every stop tells part of the story of how this forest is protected and restored.",
                es: "Sigue el sendero desde la reserva Work with Nature hasta el Parque Nacional Barbilla. Cada parada cuenta una parte de la historia de cómo se protege y restaura este bosque." },
       stop: { en: "Stop", es: "Parada" }
@@ -304,11 +315,11 @@ window.SITE = {
     partners: {
       eyebrow: { en: "Who organises the tour", es: "Quién organiza el tour" },
       title: { en: "Organised by Fundación Work with Nature", es: "Organizado por la Fundación Work with Nature" },
-      intro: { en: "We run this tour together with the people who protect and know this forest best. Your visit directly supports the park, local guides and the community.",
-               es: "Organizamos este tour junto con quienes mejor protegen y conocen este bosque. Tu visita apoya directamente al parque, a los guías locales y a la comunidad.", todo: true },
+      intro: { en: "We run this tour together with the people who protect and know this forest best. Your visit directly supports the National Park, local guides and the community.",
+               es: "Organizamos este tour junto con quienes mejor protegen y conocen este bosque. Tu visita apoya directamente al Parque Nacional, a los guías locales y a la comunidad." },
       items: [
         { logo: "workWithNature", title: { en: "Fundación Work with Nature", es: "Fundación Work with Nature" },
-          text: { en: "Organiser. A Costa Rican foundation restoring rainforest and protecting wildlife on the edge of Barbilla.", es: "Organizador. Una fundación costarricense que restaura el bosque y protege la vida silvestre en el borde de Barbilla.", todo: true } },
+          text: { en: "Organizer. A Costa Rican foundation restoring rainforest and protecting wildlife on the edge of National Park Barbilla.", es: "Organizador. Una fundación costarricense que restaura el bosque y protege la vida silvestre en el borde del Parque Nacional Barbilla." } },
         { logo: "sinac", title: { en: "SINAC", es: "SINAC" },
           text: { en: "Government partner. Costa Rica's National System of Conservation Areas, which manages National Park Barbilla.", es: "Socio gubernamental. El Sistema Nacional de Áreas de Conservación, que administra el Parque Nacional Barbilla." } },
         { icon: "guide", title: { en: "Licensed local guides", es: "Guías locales con licencia" },
