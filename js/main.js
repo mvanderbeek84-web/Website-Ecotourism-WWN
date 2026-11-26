@@ -1,5 +1,5 @@
 /* =====================================================================
-   Barbilla tour site · behaviour
+   Barbilla tour site · behavior
    You normally don't need to edit this file. Content lives in
    content/content.js
    ===================================================================== */
@@ -69,7 +69,7 @@
   }
   function pad(n) { return (n < 10 ? "0" : "") + n; }
   function iso(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
-  function locale() { return lang === "es" ? "es-CR" : "en-GB"; }
+  function locale() { return lang === "es" ? "es-CR" : "en-US"; }
 
   /* ---------------- Static text ---------------- */
   function renderStatic() {
@@ -91,7 +91,7 @@
     $$("[data-contact]").forEach(function (el) {
       var k = el.getAttribute("data-contact");
       var span = el.querySelector("span:not([data-t])");
-      if (k === "organisation") el.textContent = c.organisation;
+      if (k === "organization") el.textContent = c.organization;
       if (k === "email") { el.href = "mailto:" + c.email; (span || el).textContent = c.email; }
       if (k === "emailAlt") { el.hidden = !c.emailAlt; if (c.emailAlt) { el.href = "mailto:" + c.emailAlt; (span || el).textContent = c.emailAlt; } }
       if (k === "phone") { el.href = "tel:" + c.phoneInternational; if (span) span.textContent = "+506 " + c.phone; }
@@ -331,7 +331,8 @@
       var L = S.LOGOS[k];
       box.appendChild(h("div", { class: "plate" }, [h("img", { src: L.file, alt: L.name, loading: "lazy" })]));
     });
-    $("#bookingBg").src = "assets/img/" + S.PHOTOS.mistCanopy.file + "-l.jpg";
+    $("#logisticsBg").src = "assets/img/" + S.PHOTOS[S.backgrounds.logistics].file + "-l.jpg";
+    $("#bookingBg").src = "assets/img/" + S.PHOTOS[S.backgrounds.booking].file + "-l.jpg";
   }
 
   /* =================================================================

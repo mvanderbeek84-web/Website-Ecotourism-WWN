@@ -1,6 +1,6 @@
 /* =====================================================================
    Night Canopy design system · Barbilla tour site
-   Colours, type and radii follow the Night Canopy tokens.
+   Colors, type and radii follow the Night Canopy tokens.
    ===================================================================== */
 
 :root {
@@ -355,16 +355,23 @@ p { margin: 0; }
 .partner .role { font: 500 12px/18px var(--f-sans); text-transform: uppercase; letter-spacing: .14em; color: var(--lime); }
 
 /* ---------------- Logistics ---------------- */
+/* forest photo behind the section, cards as frosted glass on top */
+.logistics { position: relative; isolation: isolate; overflow: hidden; }
+.log-bg { position: absolute; inset: 0; z-index: -1; }
+.log-bg img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.15); }
+.log-bg::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--night-950) 0%, rgba(11,17,13,.35) 22%, rgba(11,17,13,.25) 55%, rgba(11,17,13,.7) 85%, var(--night-950) 100%); }
+.logistics .section-head h2 { text-shadow: 0 4px 30px rgba(11,17,13,.6); }
 .log-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; padding-bottom: var(--section); }
-.log-card { grid-column: span 2; background: var(--night-900); border: 1px solid var(--night-700); border-radius: var(--r-lg); padding: 28px; position: relative; overflow: hidden; transition: border-color var(--t-med), transform var(--t-med) var(--ease); }
-.log-card:hover { border-color: var(--night-600); transform: translateY(-3px); }
+.log-card { grid-column: span 2; background: rgba(11,17,13,.58); border: 1px solid rgba(238,244,234,.14); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); border-radius: var(--r-lg); padding: 28px; position: relative; overflow: hidden; transition: border-color var(--t-med), transform var(--t-med) var(--ease); }
+.log-card:hover { border-color: rgba(238,244,234,.28); transform: translateY(-3px); }
 .log-card.wide { grid-column: span 2; }
 .log-card .num { font: 500 13px/20px var(--f-mono); color: var(--lichen); }
 .log-head { display: flex; align-items: center; gap: 12px; margin: 12px 0 16px; }
 .log-head .ic { width: 22px; height: 22px; color: var(--canopy); }
 .log-head h3 { font: 500 20px/28px var(--f-slab); }
-.log-card p { color: var(--moss); }
-.log-big { font: 800 44px/1 var(--f-slab); margin-bottom: 12px; color: var(--mist); }
+.log-card p { color: #cfdac9; }
+.log-big { font: 800 44px/1 var(--f-slab); margin-bottom: 12px; color: var(--lime); }
 .log-big small { font: 400 15px var(--f-sans); color: var(--moss); margin-left: 6px; }
 .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .checklist li { display: flex; gap: 12px; align-items: flex-start; color: var(--mist); }

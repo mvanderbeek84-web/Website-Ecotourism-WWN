@@ -21,9 +21,9 @@ window.SITE = {
   showPlaceholderMarkers: true,
   defaultLanguage: "en",           // "en" or "es"
 
-  /* ---------------- Organisation & contact (footer, booking) -------- */
+  /* ---------------- Organization & contact (footer, booking) -------- */
   contact: {
-    organisation: "Fundación Work with Nature",
+    organization: "Fundación Work with Nature",
     email: "maarten@adoptrainforest.com",       // booking requests go here
     emailAlt: null,                             // a second address shown in the footer (set to null to hide)
     phone: "6082-6565",
@@ -100,7 +100,7 @@ window.SITE = {
     iguanaHelmet:    { file: "z9a5863",   alt: { en: "Helmeted iguana", es: "Iguana de casco" } },
     malachite:       { file: "img-7420",  alt: { en: "Malachite butterfly", es: "Mariposa malaquita" } },
     vineSnake:       { file: "img-8672",  alt: { en: "Vine snake with open mouth", es: "Bejuquilla con la boca abierta" } },
-    moth:            { file: "rusted-fiestamark2", alt: { en: "Colourful moth on a leaf", es: "Polilla colorida sobre una hoja" } }
+    moth:            { file: "rusted-fiestamark2", alt: { en: "Colorful moth on a leaf", es: "Polilla colorida sobre una hoja" } }
   },
 
   /* ---------------- Logos (footer + partners) ---------------------- */
@@ -110,6 +110,12 @@ window.SITE = {
     sinac:           { file: "assets/logos/sinac.png",            name: "SINAC" },
     barbilla:        { file: "assets/logos/barbilla.png",         name: "Parque Nacional Barbilla" },
     tapaTours:       { file: "assets/logos/tapa-tours.png",       name: "Tapa Tours" }
+  },
+
+  /* ---------------- Section background photos (names from PHOTOS) --- */
+  backgrounds: {
+    logistics: "mistCanopy",   // behind "Everything you need to know"
+    booking: "mistTall"        // faint, behind the booking form
   },
 
   /* ---------------- Moving photo ribbon (under the hero) ----------- */
@@ -323,8 +329,8 @@ window.SITE = {
       stop: { en: "Stop", es: "Parada" }
     },
     partners: {
-      eyebrow: { en: "Who organises the tour", es: "Quién organiza el tour" },
-      title: { en: "Organised by Fundación Work with Nature", es: "Organizado por la Fundación Work with Nature" },
+      eyebrow: { en: "Who organizes the tour", es: "Quién organiza el tour" },
+      title: { en: "Organized by Fundación Work with Nature", es: "Organizado por la Fundación Work with Nature" },
       intro: { en: "We run this tour together with the people who protect and know this forest best. Your visit directly supports the National Park, local guides and the community.",
                es: "Organizamos este tour junto con quienes mejor protegen y conocen este bosque. Tu visita apoya directamente al Parque Nacional, a los guías locales y a la comunidad." },
       items: [

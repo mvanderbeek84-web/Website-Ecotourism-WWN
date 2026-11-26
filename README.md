@@ -13,8 +13,8 @@ Double-click `index.html`. It opens in your browser, no installation needed.
 | What | File |
 |---|---|
 | **All text (EN + ES), photos, prices, dates, contact** | `content/content.js` |
-| Colours, fonts, layout | `css/style.css` |
-| Behaviour (calendar, language switch, animations) | `js/main.js` (normally no need to touch) |
+| Colors, fonts, layout | `css/style.css` |
+| Behavior (calendar, language switch, animations) | `js/main.js` (normally no need to touch) |
 | Web-sized photos (small `-s` and large `-l`) | `assets/img/` |
 | Logos | `assets/logos/` |
 
