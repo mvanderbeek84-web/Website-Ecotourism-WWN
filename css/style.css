@@ -150,14 +150,18 @@ p { margin: 0; }
 .main-nav a:hover::after, .main-nav a.active::after { transform: scaleX(1); }
 .header-actions { display: flex; align-items: center; gap: 12px; }
 .lang-toggle {
-  display: inline-flex; align-items: center; gap: 4px; min-height: 44px; padding: 0 14px;
-  background: transparent; border: 1px solid var(--night-600); border-radius: var(--r-pill);
-  font: 500 13px/1 var(--f-mono); color: var(--lichen); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 2px; min-height: 44px; padding: 3px;
+  background: rgba(11,17,13,.55); border: 1px solid var(--night-600); border-radius: var(--r-pill);
+  font: 600 13px/1 var(--f-mono); color: var(--lichen); cursor: pointer;
   transition: border-color var(--t-fast);
 }
 .lang-toggle:hover { border-color: var(--canopy); }
-.lang-toggle [data-lang].on, .lang-toggle .on { color: var(--mist); }
-.lang-sep { opacity: .5; }
+.lang-seg { display: inline-flex; align-items: center; gap: 7px; height: 36px; padding: 0 12px; border-radius: var(--r-pill); transition: background var(--t-fast), color var(--t-fast); }
+.lang-seg .flag { width: 21px; height: 14px; border-radius: 3px; flex: none; box-shadow: 0 0 0 1px rgba(255,255,255,.25); opacity: .55; filter: saturate(.6); transition: opacity var(--t-fast), filter var(--t-fast); }
+.lang-seg.on { background: var(--mist); color: var(--night-950); }
+.lang-seg.on .flag { opacity: 1; filter: none; }
+.lang-toggle:hover .lang-seg:not(.on) { color: var(--mist); }
+.lang-toggle:hover .lang-seg:not(.on) .flag { opacity: .9; }
 .menu-btn { display: none; width: 44px; height: 44px; border: 1px solid var(--night-600); border-radius: var(--r-pill); background: transparent; cursor: pointer; position: relative; }
 .menu-btn i { position: absolute; left: 13px; right: 13px; height: 2px; background: var(--mist); border-radius: 2px; transition: transform var(--t-med) var(--ease); }
 .menu-btn i:first-of-type { top: 17px; } .menu-btn i:last-of-type { top: 25px; }
@@ -472,7 +476,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--canopy); box-sh
 .footer-nav { display: grid; gap: 8px; align-content: start; justify-items: start; }
 .footer-nav a { color: var(--moss); text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
 .footer-nav a:hover { color: var(--mist); }
-.lang-toggle-text { font-family: var(--f-sans); color: var(--mist); margin-top: 8px; }
+.lang-toggle-text { font-family: var(--f-sans); color: var(--mist); margin-top: 8px; padding: 0 16px; }
 .copyright { font-size: 12px; color: var(--lichen); border-top: 1px solid var(--night-700); padding-top: 24px; }
 
 /* ---------------- Animations ---------------- */

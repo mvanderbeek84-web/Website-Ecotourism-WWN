@@ -80,9 +80,7 @@
     });
     $$("[data-tour]").forEach(function (el) { setText(el, TOUR[el.getAttribute("data-tour")]); });
     var lt = $("#langToggle");
-    var spans = lt.querySelectorAll("span[aria-hidden]");
-    spans[0].classList.toggle("on", lang === "en");
-    spans[2].classList.toggle("on", lang === "es");
+    lt.querySelectorAll(".lang-seg").forEach(function (s) { s.classList.toggle("on", s.dataset.seg === lang); });
     lt.setAttribute("aria-label", tr(S.text.langToggle));
     var vt = $("#motionToggle .sr"); if (vt) vt.textContent = tr(heroPaused ? S.text.hero.play : S.text.hero.pause);
   }
