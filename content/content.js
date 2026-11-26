@@ -24,7 +24,8 @@ window.SITE = {
   /* ---------------- Organisation & contact (footer, booking) -------- */
   contact: {
     organisation: "Fundación Work with Nature",
-    email: "maarten@adoptrainforest.com",
+    email: "maarten@adopteerregenwoud.nl",      // booking requests go here
+    emailAlt: "maarten@adoptrainforest.com",    // also shown in the footer (set to null to hide)
     phone: "6082-6565",
     phoneInternational: "+50660826565",   // used for WhatsApp + tap-to-call
     whatsapp: true,                        // show WhatsApp button?
@@ -55,8 +56,10 @@ window.SITE = {
             data saver / reduced motion).                             */
   heroVideo: {
     src: "../RainforestDeepDive02_ReturnOfTheClimbers_English_FHD_AR.mp4",
-    start: 0,      // TODO: second where the drone shot starts
-    end: 14,       // TODO: second where it ends
+    start: 139,    // 2:19  drone shot starts
+    end: 162,      // 2:42  drone shot ends
+    hideBottomPercent: 16,   // crops the bottom of the film so the burned-in subtitles don't show.
+                             // Set to 0 once you use a clean clip without subtitles.
     poster: "parkLandscape"
   },
 
@@ -124,21 +127,21 @@ window.SITE = {
       place: { en: "National Park Barbilla · Sector Matina", es: "Parque Nacional Barbilla · Sector Matina" },
 
       /* Quick facts shown in the hero and booking summary */
-      durationHours: { en: "± 6 hours", es: "± 6 horas", todo: true },
+      durationHours: { en: "5–6 hours", es: "5–6 horas" },
       difficulty: 2,                 // 1 = easy, 2 = moderate, 3 = challenging
       groupMin: 1,
       groupMax: 12,                  // largest group the calendar accepts
-      pricePerPerson: 65,            // number only, used to estimate total
-      childPricePerPerson: null,     // set a number to offer a child rate
+      pricePerPerson: 100,            // number only, used to estimate total
+      childPricePerPerson: null,     // null = same price for everyone
       currency: "USD",
-      priceIsPlaceholder: true,
+      priceIsPlaceholder: false,
 
       /* Which days can be booked */
       availability: {
-        daysOfWeek: [1, 2, 3, 4, 5, 6],   // 0 = Sunday … 6 = Saturday
+        daysOfWeek: [0, 1, 2, 3, 4, 5, 6],   // 0 = Sunday … 6 = Saturday (every day)
         minDaysAhead: 2,                  // earliest booking: 2 days from today
         maxMonthsAhead: 12,
-        closedDates: [ "2026-12-24", "2026-12-25", "2027-01-01" ]   // YYYY-MM-DD
+        closedDates: [ ]   // add days you're closed, like "2026-12-25"
       },
 
       /* The 8 stops of the tour, in order */
@@ -218,27 +221,27 @@ window.SITE = {
       logistics: {
         reserve: {
           title: { en: "How to book", es: "Cómo reservar" },
-          text: { en: "Choose a date and group size below and send your request. We confirm availability by email or WhatsApp within 24 hours. Your booking is final once we confirm.",
-                  es: "Elige una fecha y el tamaño del grupo abajo y envía tu solicitud. Confirmamos disponibilidad por correo o WhatsApp en menos de 24 horas. La reserva queda firme cuando la confirmamos.", todo: true }
+          text: { en: "Choose a date and group size below and send your request by email or WhatsApp (6082-6565). Book at least 2 days ahead. We confirm availability and the start time with you, and your booking is final once we confirm.",
+                  es: "Elige una fecha y el tamaño del grupo abajo y envía tu solicitud por correo o WhatsApp (6082-6565). Reserva con al menos 2 días de anticipación. Confirmamos contigo la disponibilidad y la hora de inicio, y la reserva queda firme cuando la confirmamos." }
         },
         pricing: {
           title: { en: "Pricing", es: "Precio" },
-          text: { en: "Per person, including park entrance fee and guide. Children under 12 at a reduced rate. Part of every ticket goes to reforestation.",
-                  es: "Por persona, incluye la entrada al parque y el guía. Niños menores de 12 años con tarifa reducida. Parte de cada entrada se destina a la reforestación.", todo: true }
+          text: { en: "Per person, including your certified guide and the entrance fees for the national park and the nature reserve. Part of every ticket goes to conservation and reforestation.",
+                  es: "Por persona, incluye tu guía certificado y las entradas al parque nacional y a la reserva natural. Parte de cada entrada se destina a la conservación y la reforestación." }
         },
         duration: {
           title: { en: "Duration", es: "Duración" },
-          text: { en: "About 6 hours, starting at 7:00 in the morning. Moderate walking on forest trails, about 5 km in total.",
-                  es: "Aproximadamente 6 horas, con salida a las 7:00 de la mañana. Caminata moderada por senderos, unos 5 km en total.", todo: true }
+          text: { en: "The tour takes 5 to 6 hours, with moderate walking on forest trails. There is no fixed start time: we agree on it with you when we confirm your booking.",
+                  es: "El tour dura de 5 a 6 horas, con caminata moderada por senderos del bosque. No hay hora fija de inicio: la acordamos contigo al confirmar tu reserva." }
         },
         included: {
           title: { en: "What's included", es: "Qué incluye" },
           items: [
-            { en: "Licensed local nature guide", es: "Guía local de naturaleza con licencia" },
-            { en: "SINAC park entrance fee", es: "Entrada al parque (SINAC)" },
-            { en: "Typical Costa Rican lunch", es: "Almuerzo típico costarricense", todo: true },
-            { en: "Fresh fruit and drinking water", es: "Fruta fresca y agua", todo: true },
-            { en: "Plant your own native tree", es: "Siembra tu propio árbol nativo", todo: true }
+            { en: "Certified nature guide for your group", es: "Guía de naturaleza certificado para tu grupo" },
+            { en: "Entrance fee for National Park Barbilla (SINAC)", es: "Entrada al Parque Nacional Barbilla (SINAC)" },
+            { en: "Entrance fee for the nature reserve (Fundación Work with Nature)", es: "Entrada a la reserva natural (Fundación Work with Nature)" },
+            { en: "Fruits and a snack", es: "Frutas y una merienda" },
+            { en: "Part of your ticket goes to conservation and reforestation", es: "Parte de tu entrada apoya la conservación y la reforestación" }
           ]
         },
         bring: {
@@ -249,7 +252,7 @@ window.SITE = {
             { en: "Reusable water bottle", es: "Botella de agua reutilizable" },
             { en: "Insect repellent and sunscreen", es: "Repelente y bloqueador solar" },
             { en: "Binoculars and camera", es: "Binoculares y cámara" },
-            { en: "ID or passport", es: "Cédula o pasaporte", todo: true }
+            { en: "ID or passport", es: "Cédula o pasaporte" }
           ]
         }
       }
@@ -309,11 +312,18 @@ window.SITE = {
         { logo: "workWithNature", title: { en: "Fundación Work with Nature", es: "Fundación Work with Nature" },
           text: { en: "Organiser. A Costa Rican foundation restoring rainforest and protecting wildlife on the edge of Barbilla.", es: "Organizador. Una fundación costarricense que restaura el bosque y protege la vida silvestre en el borde de Barbilla.", todo: true } },
         { logo: "sinac", title: { en: "SINAC", es: "SINAC" },
-          text: { en: "Costa Rica's National System of Conservation Areas, which manages National Park Barbilla.", es: "El Sistema Nacional de Áreas de Conservación, que administra el Parque Nacional Barbilla." } },
+          text: { en: "Government partner. Costa Rica's National System of Conservation Areas, which manages National Park Barbilla.", es: "Socio gubernamental. El Sistema Nacional de Áreas de Conservación, que administra el Parque Nacional Barbilla." } },
         { icon: "guide", title: { en: "Licensed local guides", es: "Guías locales con licencia" },
           text: { en: "Certified naturalist guides from the communities around the park.", es: "Guías naturalistas certificados de las comunidades alrededor del parque.", todo: true } },
-        { icon: "town", title: { en: "Local government", es: "Gobierno local" },
-          text: { en: "In cooperation with the Municipality of Matina.", es: "En cooperación con la Municipalidad de Matina.", todo: true } }
+      ],
+      /* Other partners, shown as a list under the cards */
+      othersTitle: { en: "Also in cooperation with", es: "También en cooperación con" },
+      others: [
+        { name: "Stichting Adopteer Regenwoud", note: { en: "Netherlands", es: "Países Bajos" } },
+        { name: "Tapa Tours and Guide", note: { en: "Local tours and guiding", es: "Tours y guías locales" } },
+        { name: "Finca Integral Jardín Mandala", note: { en: "Local farm", es: "Finca local" } },
+        { name: "Corredor Biológico Madre de Dios", note: { en: "Biological corridor", es: "Corredor biológico" } },
+        { name: "UNESCO World Heritage Site", note: { en: "Talamanca Range–La Amistad Reserves", es: "Reservas de la Cordillera de Talamanca–La Amistad", todo: true } }
       ]
     },
     logistics: {
@@ -323,8 +333,8 @@ window.SITE = {
     booking: {
       eyebrow: { en: "Reservations", es: "Reservas" },
       title: { en: "Pick your day in the forest", es: "Elige tu día en el bosque" },
-      intro: { en: "Choose a date and tell us who's coming. This is a request: we'll confirm by email or WhatsApp within 24 hours. No payment yet.",
-               es: "Elige una fecha y cuéntanos quién viene. Esto es una solicitud: confirmamos por correo o WhatsApp en menos de 24 horas. Sin pago por ahora.", todo: true },
+      intro: { en: "Choose a date and tell us who's coming. This is a request: we'll confirm by email or WhatsApp and agree the start time with you. No payment yet.",
+               es: "Elige una fecha y cuéntanos quién viene. Esto es una solicitud: confirmamos por correo o WhatsApp y acordamos contigo la hora de inicio. Sin pago por ahora." },
       date: { en: "Date", es: "Fecha" },
       pickDate: { en: "Pick a date in the calendar", es: "Elige una fecha en el calendario" },
       prevMonth: { en: "Previous month", es: "Mes anterior" },
@@ -333,7 +343,7 @@ window.SITE = {
       available: { en: "Available", es: "Disponible" },
       selected: { en: "Your date", es: "Tu fecha" },
       adults: { en: "Adults", es: "Adultos" },
-      children: { en: "Children (under 12)", es: "Niños (menores de 12)" },
+      children: { en: "Children", es: "Niños" },
       decrease: { en: "Fewer", es: "Menos" },
       increase: { en: "More", es: "Más" },
       name: { en: "Full name", es: "Nombre completo" },
@@ -352,7 +362,7 @@ window.SITE = {
       submit: { en: "Send booking request", es: "Enviar solicitud" },
       whatsapp: { en: "Send via WhatsApp", es: "Enviar por WhatsApp" },
       sentTitle: { en: "Almost done", es: "Casi listo" },
-      sentText: { en: "Your email app opened with the request filled in. Press send there, and we'll reply within 24 hours. Nothing opened? Email us at", es: "Se abrió tu aplicación de correo con la solicitud. Presiona enviar allí y responderemos en menos de 24 horas. ¿No se abrió nada? Escríbenos a" },
+      sentText: { en: "Your email app opened with the request filled in. Press send there and we'll get back to you soon. Nothing opened? Email us at", es: "Se abrió tu aplicación de correo con la solicitud. Presiona enviar allí y te responderemos pronto. ¿No se abrió nada? Escríbenos a" },
       errors: {
         date: { en: "Choose a date in the calendar.", es: "Elige una fecha en el calendario." },
         name: { en: "Add your name so we know who's coming.", es: "Agrega tu nombre para saber quién viene." },

@@ -39,20 +39,23 @@ between the quotes, save, and reload the page.
 
 ## Hero video (drone clip)
 
-Right now the hero plays a section of the full film
-`../RainforestDeepDive02_ReturnOfTheClimbers_English_FHD_AR.mp4` (1.1 GB), between the
-`start` and `end` seconds set under `heroVideo` in `content.js`. That works when you open the
-site from this folder, but it is far too big for a real website.
+The hero plays the drone shot from 2:19 to 2:42 of
+`RainforestDeepDive02_ReturnOfTheClimbers_English_FHD_AR.mp4` and loops it. The film has
+subtitles burned in, so the page crops the bottom 16% of the picture (`hideBottomPercent` under
+`heroVideo` in `content/content.js`).
 
-To make a proper clip (10–20 s, no sound, ~5 MB), with free [ffmpeg](https://ffmpeg.org):
+Right now `src` points to the full film (1.1 GB) one folder above the site. That works when you
+open the site from your computer, but the film is not on GitHub and is far too big for a website.
+
+To make a light clip (23 s, no sound, subtitles cropped off, ~5–8 MB), with free [ffmpeg](https://ffmpeg.org),
+run this in the folder that holds the film:
 
 ```
-ffmpeg -ss 00:01:05 -t 15 -i "RainforestDeepDive02_ReturnOfTheClimbers_English_FHD_AR.mp4" -an -vf "scale=1920:-2" -c:v libx264 -crf 26 -preset slow -movflags +faststart "site/assets/video/hero.mp4"
+ffmpeg -ss 00:02:19 -to 00:02:42 -i "RainforestDeepDive02_ReturnOfTheClimbers_English_FHD_AR.mp4" -an -vf "crop=iw:ih*0.84:0:0,scale=1920:-2" -c:v libx264 -crf 26 -preset slow -movflags +faststart "site/assets/video/hero.mp4"
 ```
 
-Replace `00:01:05` with where the drone shot starts and `15` with its length in seconds.
-Then in `content.js` set `src: "assets/video/hero.mp4", start: 0, end: null`.
-(Any video editor that exports MP4 without sound works too.)
+Then in `content.js` set `src: "assets/video/hero.mp4", start: 0, end: null, hideBottomPercent: 0`.
+If you have a version of the film without subtitles, use that instead and leave out the `crop=…,` part.
 
 Visitors who prefer reduced motion or use data saver see the still photo instead.
 
@@ -61,7 +64,7 @@ Visitors who prefer reduced motion or use data saver see the still photo instead
 The form has a calendar (closed days, minimum notice and group size are set under
 `availability` and `groupMax` in `content.js`) and group size steppers.
 For now **Send booking request** opens the visitor's email app with the request filled in,
-addressed to the contact email. **Send via WhatsApp** opens WhatsApp with the same text.
+addressed to the booking email (`contact.email`). **Send via WhatsApp** opens WhatsApp with the same text.
 Nothing is stored and nobody pays online yet.
 
 To connect a booking system or form service later, set

@@ -95,6 +95,7 @@
       var span = el.querySelector("span:not([data-t])");
       if (k === "organisation") el.textContent = c.organisation;
       if (k === "email") { el.href = "mailto:" + c.email; (span || el).textContent = c.email; }
+      if (k === "emailAlt") { el.hidden = !c.emailAlt; if (c.emailAlt) { el.href = "mailto:" + c.emailAlt; (span || el).textContent = c.emailAlt; } }
       if (k === "phone") { el.href = "tel:" + c.phoneInternational; if (span) span.textContent = "+506 " + c.phone; }
       if (k === "whatsapp") { el.href = "https://wa.me/" + c.phoneInternational.replace(/\D/g, ""); el.hidden = !c.whatsapp; }
       if (k === "website") el.href = c.website;
@@ -130,6 +131,9 @@
     var v = $("#heroVideo"), cfg = S.heroVideo, btn = $("#videoToggle");
     var start = cfg.start || 0, end = cfg.end;
     v.src = cfg.src + (start || end ? "#t=" + start + (end ? "," + end : "") : "");
+    // Crop the bottom of the film (e.g. burned-in subtitles) by making the video taller than the hero
+    var crop = Math.min(40, Math.max(0, cfg.hideBottomPercent || 0));
+    if (crop) { v.style.bottom = "auto"; v.style.height = (100 / (1 - crop / 100)).toFixed(2) + "%"; v.style.objectPosition = "center top"; }
     v.poster = poster.src;
     v.addEventListener("loadedmetadata", function () { if (start) v.currentTime = start; tryPlay(); });
     v.addEventListener("playing", function () { v.classList.add("ready"); btn.hidden = false; });
@@ -244,6 +248,14 @@
       var text = h("p"); setText(text, p.text);
       ul.appendChild(h("li", { class: "partner reveal" }, [visual, h("div", null, [title, text])]));
     });
+    var P = S.text.partners;
+    if (P.others && P.others.length) {
+      var head = h("h3"); setText(head, P.othersTitle);
+      ul.appendChild(h("li", { class: "partner-others reveal" }, [head, h("ul", { class: "chips" }, P.others.map(function (o) {
+        var note = h("small"); setText(note, o.note);
+        return h("li", null, [h("b", null, [o.name]), note]);
+      }))]));
+    }
   }
 
   /* ---------------- Logistics ---------------- */
