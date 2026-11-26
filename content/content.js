@@ -199,7 +199,7 @@ window.SITE = {
         },
         {
           key: "macaws",
-          tag: { en: "Birding", es: "Aves" },
+          tag: { en: "Endangered", es: "En peligro" },
           title: { en: "Great green macaws", es: "Lapas verdes" },
           text: { en: "The great green macaw is critically endangered, with only one thousand individuals left worldwide. We provide them with trees for their specialized diet and for breeding. With luck, you'll hear them before you see them.",
                   es: "La lapa verde está en peligro crítico de extinción y quedan solo mil individuos en todo el mundo. Les ofrecemos árboles para su dieta especializada y para anidar. Con suerte, las oirás antes de verlas." },
