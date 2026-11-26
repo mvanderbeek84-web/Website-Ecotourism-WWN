@@ -236,8 +236,8 @@ window.SITE = {
         },
         pricing: {
           title: { en: "Pricing", es: "Precio" },
-          text: { en: "Per person, including your certified guide and the entrance fees for the national park and the nature reserve. Part of every ticket goes to conservation and reforestation.",
-                  es: "Por persona, incluye tu guía certificado y las entradas al parque nacional y a la reserva natural. Parte de cada entrada se destina a la conservación y la reforestación." }
+          text: { en: "Includes your certified guide and the entrance fees for the national park and the nature reserve. Part of every ticket goes to conservation and reforestation projects.",
+                  es: "Incluye tu guía certificado y las entradas al parque nacional y a la reserva natural. Parte de cada entrada se destina a proyectos de conservación y reforestación." }
         },
         duration: {
           title: { en: "Duration", es: "Duración" },
