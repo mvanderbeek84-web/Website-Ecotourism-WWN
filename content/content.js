@@ -163,8 +163,8 @@ window.SITE = {
           key: "reforestation",
           tag: { en: "Hands-on", es: "Participativo" },
           title: { en: "Reforestation", es: "Reforestación" },
-          text: { en: "See how former pasture is turning back into forest. Meet the people who grow and plant native trees, and plant one yourself.",
-                  es: "Descubre cómo antiguos potreros vuelven a ser bosque. Conoce a quienes cultivan y siembran árboles nativos, y siembra uno tú mismo.", todo: true },
+          text: { en: "See how former pasture is turning back into forest. Learn about the experimental scientific setup used to uncover the best restoration practices.",
+                  es: "Descubre cómo antiguos potreros vuelven a ser bosque. Conoce el diseño científico experimental que se usa para descubrir las mejores prácticas de restauración." },
           photos: ["sapling", "guide", "leafShadow"],
           impact: { value: 278, total: 2000, unit: "ha",
                     label: { en: "hectares restored of our 2,000 ha goal", es: "hectáreas restauradas de nuestra meta de 2.000 ha", todo: true } }
