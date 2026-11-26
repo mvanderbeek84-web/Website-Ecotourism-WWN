@@ -37,8 +37,21 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero" aria-labelledby="heroTitle">
       <div class="hero-media">
-        <img class="hero-poster" id="heroPoster" alt="">
-        <video class="hero-video" id="heroVideo" muted playsinline preload="metadata" aria-hidden="true"></video>
+        <div class="scene-wrap">
+          <div class="scene" id="scene" role="img">
+            <div class="layer" data-depth="0.35">
+              <img src="assets/img/hero-sky-s.jpg" srcset="assets/img/hero-sky-s.jpg 1200w, assets/img/hero-sky-l.jpg 2400w" sizes="130vw" alt="" fetchpriority="high">
+            </div>
+            <div class="layer mist" data-depth="0.7" aria-hidden="true"></div>
+            <div class="layer" data-depth="1">
+              <img src="assets/img/hero-land-s.webp" srcset="assets/img/hero-land-s.webp 1200w, assets/img/hero-land-l.webp 2400w" sizes="130vw" alt="" fetchpriority="high">
+            </div>
+            <div class="layer mist mist-low" data-depth="1.4" aria-hidden="true"></div>
+            <div class="layer layer-fg" data-depth="2">
+              <img src="assets/img/hero-fg-s.webp" srcset="assets/img/hero-fg-s.webp 1200w, assets/img/hero-fg-l.webp 2400w" sizes="130vw" alt="">
+            </div>
+          </div>
+        </div>
         <canvas class="fireflies" id="fireflies" aria-hidden="true"></canvas>
         <div class="hero-shade"></div>
       </div>
@@ -57,7 +70,7 @@
       </div>
       <div class="hero-bottom wrap">
         <dl class="facts" id="heroFacts"></dl>
-        <button class="video-toggle" type="button" id="videoToggle" hidden>
+        <button class="video-toggle" type="button" id="motionToggle" hidden>
           <svg class="ic" aria-hidden="true"><use href="#i-pause"/></svg><span class="sr"></span>
         </button>
       </div>

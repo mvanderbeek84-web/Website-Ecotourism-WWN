@@ -43,24 +43,20 @@ window.SITE = {
     endpointUrl: null
   },
 
-  /* ---------------- Hero video --------------------------------------
-     src:   path to the video, relative to index.html.
-            Right now it points to the full RainforestDeepDive film in the
-            folder above "site". The page plays only the part between
-            start and end (in seconds) and loops it.
-            For the live website, cut a short clip (10–20 s, no sound,
-            under ~8 MB) and save it as site/assets/video/hero.mp4,
-            then set src to "assets/video/hero.mp4", start 0, end null.
-            README.md explains how to cut it.
-     poster: photo shown while the video loads (and on phones with
-            data saver / reduced motion).                             */
-  heroVideo: {
-    src: "../RainforestDeepDive02_ReturnOfTheClimbers_English_FHD_AR.mp4",
-    start: 139,    // 2:19  drone shot starts
-    end: 162,      // 2:42  drone shot ends
-    hideBottomPercent: 16,   // crops the bottom of the film so the burned-in subtitles don't show.
-                             // Set to 0 once you use a clean clip without subtitles.
-    poster: "parkLandscape"
+  /* ---------------- Hero background ---------------------------------
+     The hero is photo IMG_6978 split into three depth layers (sky with
+     the far mountains, the forest, and the grass in front). The layers
+     pan slowly and move at different speeds, which gives a 3D effect.
+     It also tilts a little with the mouse on a computer.
+     panSeconds: how long one slow pan back and forth takes.
+     depth:      strength of the 3D effect (0 = flat, 1 = normal, 1.5 = strong).
+     mist:       soft mist drifting through the valley (true / false).
+     The layer files are assets/img/hero-sky / hero-land / hero-fg.     */
+  heroScene: {
+    photo: "parkLandscape",
+    panSeconds: 60,
+    depth: 1,
+    mist: true
   },
 
   /* ---------------- Photos (short name -> file) -------------------- */
@@ -279,8 +275,8 @@ window.SITE = {
       cta: { en: "Book your date", es: "Reserva tu fecha" },
       secondary: { en: "Explore the tour", es: "Conoce el tour" },
       scroll: { en: "Scroll", es: "Desliza" },
-      pause: { en: "Pause video", es: "Pausar video" },
-      play: { en: "Play video", es: "Reproducir video" }
+      pause: { en: "Pause motion", es: "Pausar movimiento" },
+      play: { en: "Play motion", es: "Reanudar movimiento" }
     },
     facts: {
       duration: { en: "Duration", es: "Duración" },

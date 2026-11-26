@@ -37,27 +37,23 @@ between the quotes, save, and reload the page.
    `myPhoto: { file: "myphoto", alt: { en: "…", es: "…" } },`
 3. Use `"myPhoto"` in the `photos: [...]` list of a tour stop.
 
-## Hero video (drone clip)
+## Hero background (moving 3D photo)
 
-The hero plays the drone shot from 2:19 to 2:42 of
-`RainforestDeepDive02_ReturnOfTheClimbers_English_FHD_AR.mp4` and loops it. The film has
-subtitles burned in, so the page crops the bottom 16% of the picture (`hideBottomPercent` under
-`heroVideo` in `content/content.js`).
+The hero uses photo IMG_6978, split into three depth layers in `assets/img/`:
+`hero-sky` (sky and far mountains), `hero-land` (the forest) and `hero-fg` (the grass in front).
+The layers pan slowly and move at different speeds, so the landscape looks three-dimensional. On a
+computer it also tilts a little toward the mouse. Soft mist drifts through the valley.
 
-Right now `src` points to the full film (1.1 GB) one folder above the site. That works when you
-open the site from your computer, but the film is not on GitHub and is far too big for a website.
+Settings are under `heroScene` in `content/content.js`:
+- `panSeconds`: how long one slow pan back and forth takes (higher = slower)
+- `depth`: strength of the 3D effect (0 = flat, 1 = normal, 1.5 = strong)
+- `mist`: `true` or `false`
 
-To make a light clip (23 s, no sound, subtitles cropped off, ~5–8 MB), with free [ffmpeg](https://ffmpeg.org),
-run this in the folder that holds the film:
+Visitors can pause the motion with the button at the bottom right. Visitors whose device asks for
+reduced motion see the still photo.
 
-```
-ffmpeg -ss 00:02:19 -to 00:02:42 -i "RainforestDeepDive02_ReturnOfTheClimbers_English_FHD_AR.mp4" -an -vf "crop=iw:ih*0.84:0:0,scale=1920:-2" -c:v libx264 -crf 26 -preset slow -movflags +faststart "site/assets/video/hero.mp4"
-```
-
-Then in `content.js` set `src: "assets/video/hero.mp4", start: 0, end: null, hideBottomPercent: 0`.
-If you have a version of the film without subtitles, use that instead and leave out the `crop=…,` part.
-
-Visitors who prefer reduced motion or use data saver see the still photo instead.
+To use a different photo, the layers have to be cut again (sky, land and foreground with
+transparent backgrounds). Ask Claude to do it, or keep the same file names.
 
 ## Bookings
 

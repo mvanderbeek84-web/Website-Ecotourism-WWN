@@ -84,7 +84,7 @@
     spans[0].classList.toggle("on", lang === "en");
     spans[2].classList.toggle("on", lang === "es");
     lt.setAttribute("aria-label", tr(S.text.langToggle));
-    var vt = $("#videoToggle .sr"); if (vt) vt.textContent = tr(videoPaused ? S.text.hero.play : S.text.hero.pause);
+    var vt = $("#motionToggle .sr"); if (vt) vt.textContent = tr(heroPaused ? S.text.hero.play : S.text.hero.pause);
   }
 
   /* ---------------- Contact ---------------- */
@@ -105,7 +105,7 @@
   }
 
   /* ---------------- Hero ---------------- */
-  var videoPaused = false;
+  var heroPaused = false;
   function renderFacts() {
     var f = S.text.facts, dl = $("#heroFacts");
     dl.innerHTML = "";
@@ -123,35 +123,68 @@
     });
   }
 
+  /* Hero: one photo split into depth layers that pan slowly and tilt in 3D */
   function setupHero() {
-    var poster = $("#heroPoster"), p = S.PHOTOS[S.heroVideo.poster];
-    poster.src = "assets/img/" + p.file + "-l.jpg";
-    poster.alt = tr(p.alt);
-    if (reduceMotion || saveData || !S.heroVideo.src) return;
-    var v = $("#heroVideo"), cfg = S.heroVideo, btn = $("#videoToggle");
-    var start = cfg.start || 0, end = cfg.end;
-    v.src = cfg.src + (start || end ? "#t=" + start + (end ? "," + end : "") : "");
-    // Crop the bottom of the film (e.g. burned-in subtitles) by making the video taller than the hero
-    var crop = Math.min(40, Math.max(0, cfg.hideBottomPercent || 0));
-    if (crop) { v.style.bottom = "auto"; v.style.height = (100 / (1 - crop / 100)).toFixed(2) + "%"; v.style.objectPosition = "center top"; }
-    v.poster = poster.src;
-    v.addEventListener("loadedmetadata", function () { if (start) v.currentTime = start; tryPlay(); });
-    v.addEventListener("playing", function () { v.classList.add("ready"); btn.hidden = false; });
-    v.addEventListener("timeupdate", function () { if (end && v.currentTime >= end) v.currentTime = start; });
-    v.addEventListener("pause", function () { if (end && v.currentTime >= end - 0.3 && !videoPaused) { v.currentTime = start; tryPlay(); } });
-    v.addEventListener("ended", function () { v.currentTime = start; tryPlay(); });
-    v.addEventListener("error", function () { v.remove(); });
-    function tryPlay() { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
-    btn.addEventListener("click", function () {
-      videoPaused = !videoPaused;
-      if (videoPaused) v.pause(); else tryPlay();
-      btn.querySelector("use").setAttribute("href", videoPaused ? "#i-play" : "#i-pause");
-      btn.querySelector(".sr").textContent = tr(videoPaused ? S.text.hero.play : S.text.hero.pause);
+    var cfg = S.heroScene || {}, hero = $("#hero"), scene = $("#scene"), btn = $("#motionToggle");
+    var p = S.PHOTOS[cfg.photo || "parkLandscape"];
+    scene.setAttribute("aria-label", tr(p.alt));
+    if (cfg.mist === false) $$(".mist", scene).forEach(function (m) { m.style.display = "none"; });
+    var layers = $$(".layer", scene).map(function (el) { return { el: el, d: parseFloat(el.dataset.depth) || 1, mist: el.classList.contains("mist") }; });
+    var D = cfg.depth == null ? 1 : cfg.depth, period = (cfg.panSeconds || 60) * 1000;
+    var W = 0, H = 0, sw = 0, sh = 0, mouse = null, cur = { x: 0, y: 0 }, running = false, raf, t0 = performance.now(), offset = 0;
+
+    function size() {
+      W = hero.clientWidth; H = hero.clientHeight;
+      var over = 1.14;                        // a bit bigger than the hero, so edges never show
+      sw = Math.max(W, H * 1.5) * over; sh = sw / 1.5;
+      scene.style.width = sw + "px"; scene.style.height = sh + "px";
+      scene.style.marginLeft = (-sw / 2) + "px"; scene.style.marginTop = (-sh / 2) + "px";
+    }
+    function draw(now) {
+      var t = now - t0 + offset, ph = t / period * Math.PI * 2;
+      var pan = Math.sin(ph);
+      // where the viewer "looks": the mouse on computers, a slow drift on phones
+      var tx = mouse ? mouse.x : Math.sin(t / 17000) * 0.45;
+      var ty = mouse ? mouse.y : Math.sin(t / 23000) * 0.3;
+      cur.x += (tx - cur.x) * 0.04; cur.y += (ty - cur.y) * 0.04;
+      var sc = Math.min(1.2, Math.max(0, window.scrollY / Math.max(H, 1)));
+      var zoom = 1 + 0.03 * (1 - Math.cos(ph * 0.5)) / 2;
+      scene.style.transform = "translate3d(0," + (sc * H * 0.18).toFixed(1) + "px,0) rotateY(" + (cur.x * 2.4 * D).toFixed(3) + "deg) rotateX(" + (-cur.y * 1.6 * D).toFixed(3) + "deg) scale(" + zoom.toFixed(4) + ")";
+      layers.forEach(function (L) {
+        var k = L.d * D;
+        var x = -(pan * 0.016 + cur.x * 0.012) * k * sw;
+        var y = (-cur.y * 0.008 * k - sc * 0.05 * k) * sh;
+        if (L.mist) x += Math.sin(t / 21000 + L.d) * 0.02 * sw;
+        L.el.style.transform = "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0)";
+      });
+    }
+    function loop(now) { draw(now); if (running) raf = requestAnimationFrame(loop); }
+    function setRunning(on) {
+      if (on === running) return;
+      running = on; cancelAnimationFrame(raf);
+      if (on) { t0 = performance.now(); raf = requestAnimationFrame(loop); }
+      else offset += performance.now() - t0;
+    }
+    size(); draw(performance.now());
+    window.addEventListener("resize", function () { size(); draw(performance.now()); });
+    if (reduceMotion) return;                 // still photo for people who prefer less motion
+
+    var paused = false, visible = true;
+    function update() { setRunning(!paused && visible && !document.hidden); }
+    hero.addEventListener("pointermove", function (e) {
+      if (e.pointerType !== "mouse") return;
+      mouse = { x: (e.clientX / W) * 2 - 1, y: (e.clientY / H) * 2 - 1 };
     });
-    // pause when hero is off screen (saves battery)
-    new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (videoPaused) return; if (e.isIntersecting) tryPlay(); else v.pause(); });
-    }).observe($("#hero"));
+    hero.addEventListener("pointerleave", function () { mouse = null; });
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; update(); }).observe(hero);
+    document.addEventListener("visibilitychange", update);
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      paused = !paused; heroPaused = paused; update();
+      btn.querySelector("use").setAttribute("href", paused ? "#i-play" : "#i-pause");
+      btn.querySelector(".sr").textContent = tr(paused ? S.text.hero.play : S.text.hero.pause);
+    });
+    update();
   }
 
   /* Fireflies: small glowing particles drifting over the hero */
@@ -590,7 +623,7 @@
     renderStatic(); renderFacts(); renderRibbon(); renderStops(); renderPartners(); renderLogistics(); renderLogos();
     renderCalendar(); renderGuideLang(); updateSummary();
     if (again) { $$(".reveal").forEach(function (el) { el.classList.add("in"); countUp(el); }); }
-    if (again) { var hp = $("#heroPoster"); hp.alt = tr(S.PHOTOS[S.heroVideo.poster].alt); }
+    if (again) { $("#scene").setAttribute("aria-label", tr(S.PHOTOS[(S.heroScene || {}).photo || "parkLandscape"].alt)); }
   }
   renderContact();
   renderAll(false);
