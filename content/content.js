@@ -209,8 +209,8 @@ window.SITE = {
           key: "reserve",
           tag: { en: "Private reserve", es: "Reserva privada" },
           title: { en: "The Work with Nature reserve", es: "La reserva Work with Nature" },
-          text: { en: "End the day in our own reserve on the edge of the park: clear streams, rocky gorges and forest that is protected for good.",
-                  es: "Termina el día en nuestra propia reserva en el borde del parque: quebradas cristalinas, cañones rocosos y bosque protegido para siempre.", todo: true },
+          text: { en: "End the day by returning to our own reserve on the edge of the park: clear streams that provide drinking water for several communities, the starting point of the Madre de Dios Biological Corridor, and forest that is protected for good.",
+                  es: "Termina el día regresando a nuestra propia reserva en el borde del parque: quebradas cristalinas que dan agua potable a varias comunidades, el punto de partida del Corredor Biológico Madre de Dios y bosque protegido para siempre." },
           photos: ["riverGorge", "riverTall", "mistTall"]
         }
       ],
