@@ -136,7 +136,7 @@
       var over = 1.14;                        // a bit bigger than the hero, so edges never show
       sw = Math.max(W, H * 1.5) * over; sh = sw / 1.5;
       scene.style.width = sw + "px"; scene.style.height = sh + "px";
-      scene.style.marginLeft = (-sw / 2) + "px"; scene.style.marginTop = (-sh / 2) + "px";
+      scene.style.marginLeft = (-sw / 2) + "px"; scene.style.marginTop = (-sh / 2 - (sh - H) / 2 * 0.7) + "px";   // sit a bit higher: more forest, less sky
     }
     function draw(now) {
       var t = now - t0 + offset, ph = t / period * Math.PI * 2;
