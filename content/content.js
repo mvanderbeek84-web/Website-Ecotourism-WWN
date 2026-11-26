@@ -196,7 +196,7 @@ window.SITE = {
           title: { en: "Biodiversity", es: "Biodiversidad" },
           text: { en: "We have registered over 1,000 animal species in this area, including jaguars, tapirs, eyelash pitvipers, motmots and basilisks. Your guide knows where to look, and what you are looking at.",
                   es: "Hemos registrado más de 1.000 especies de animales en esta zona, entre ellas el jaguar, la danta, la bocaracá, los momotos y los basiliscos. Tu guía sabe dónde mirar y qué estás viendo." },
-          photos: ["hummingbird", "eyelashViper", "basilisk", "glasswing", "aracari", "beetle", "motmot", "owl"],
+          photos: ["hummingbird", "eyelashViper", "basilisk", "glasswing", "aracari", "beetle", "yellowTreeFrog", "owl"],
           layout: "mosaic"
         },
         {
@@ -205,7 +205,7 @@ window.SITE = {
           title: { en: "Tree frog conservation", es: "Conservación de ranas arborícolas" },
           text: { en: "Learn how we protect and monitor more than a dozen species of tree frog by installing breeding ponds. Try to find eggs and tadpoles of the gliding tree frog and the splendid leaf frog, some of the most threatened animals in the forest.",
                   es: "Aprende cómo protegemos y monitoreamos más de una docena de especies de ranas arborícolas instalando estanques de reproducción. Intenta encontrar huevos y renacuajos de la rana planeadora y la rana de hoja espléndida, algunos de los animales más amenazados del bosque." },
-          photos: ["yellowTreeFrog", "redEyedFrogs", "frogEggsLeaf"]
+          photos: ["leafFrog", "redEyedFrogs", "frogEggsLeaf"]
         },
         {
           key: "birding",
