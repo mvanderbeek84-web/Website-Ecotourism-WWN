@@ -192,8 +192,8 @@ window.SITE = {
           key: "arboretum",
           tag: { en: "Native trees", es: "Árboles nativos" },
           title: { en: "The arboretum", es: "El arboreto" },
-          text: { en: "Walk among native tree species of the Caribbean lowlands, from giant almendro to medicinal plants, and learn why each one matters to wildlife.",
-                  es: "Camina entre especies de árboles nativos de las tierras bajas del Caribe, desde el gran almendro hasta plantas medicinales, y aprende por qué cada una es importante para la fauna.", todo: true },
+          text: { en: "Walk among more than 100 native tree species in our living tree museum. Your guide explains which trees have medicinal properties, which are ecologically important and which have spiritual value.",
+                  es: "Camina entre más de 100 especies de árboles nativos en nuestro museo vivo de árboles. Tu guía te explica qué árboles tienen propiedades medicinales, cuáles son importantes para el ecosistema y cuáles tienen un valor espiritual." },
           photos: ["tallTree", "leafShadow", "tortoiseBeetle"],
           photoNote: { en: "Arboretum photos still to come", es: "Faltan fotos del arboreto", todo: true }
         },
