@@ -184,8 +184,8 @@ window.SITE = {
           key: "frogs",
           tag: { en: "Conservation", es: "Conservación" },
           title: { en: "Tree frog conservation", es: "Conservación de ranas arborícolas" },
-          text: { en: "Learn how we protect breeding ponds and monitor glass frogs, leaf frogs and red-eyed tree frogs, some of the most threatened animals in the forest.",
-                  es: "Aprende cómo protegemos los estanques de reproducción y monitoreamos ranas de vidrio, ranas de hoja y ranas calzonudas, algunos de los animales más amenazados del bosque.", todo: true },
+          text: { en: "Learn how we protect and monitor more than a dozen species of tree frog by installing breeding ponds. Try to find eggs and tadpoles of the gliding tree frog and the splendid leaf frog, some of the most threatened animals in the forest.",
+                  es: "Aprende cómo protegemos y monitoreamos más de una docena de especies de ranas arborícolas instalando estanques de reproducción. Intenta encontrar huevos y renacuajos de la rana planeadora y la rana de hoja espléndida, algunos de los animales más amenazados del bosque." },
           photos: ["redEyedFrogs", "leafFrog", "glassFrogDiane", "frogEggs", "loquaciousFrogs"]
         },
         {
