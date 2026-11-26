@@ -18,8 +18,7 @@
   <!-- ============ HEADER ============ -->
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="Fundación Work with Nature">
-      <img src="assets/logos/adopt-rainforest.png" alt="" width="40" height="35">
-      <span class="brand-text">Work with Nature</span>
+      <img src="assets/logos/work-with-nature-header.png" alt="Fundación Work with Nature" width="86" height="64">
     </a>
     <nav class="main-nav" id="mainNav" aria-label="Main">
       <a href="#tour" data-t="nav.tour"></a>
@@ -201,6 +200,28 @@
         </div>
       </form>
     </section>
+
+    <!-- ============ ADOPT RAINFOREST (donation) ============ -->
+    <section class="adopt" id="adopt" aria-labelledby="adoptTitle">
+      <div class="wrap">
+        <div class="adopt-card">
+          <div class="adopt-logo plate"><img src="assets/logos/adopt-rainforest.png" alt="Adopt Rainforest" width="160" height="141" loading="lazy"></div>
+          <div class="adopt-body">
+            <p class="eyebrow" data-t="adopt.eyebrow"></p>
+            <h2 id="adoptTitle" data-t="adopt.title"></h2>
+            <p class="adopt-text" data-t="adopt.text"></p>
+            <div class="adopt-facts">
+              <div><b data-t="adopt.price"></b><span data-t="adopt.priceLabel"></span></div>
+              <div><b><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg></b><span data-t="adopt.certificate"></span></div>
+            </div>
+            <div class="adopt-actions">
+              <a class="adopt-link" data-contact="website" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg><span data-t="adopt.button"></span></a>
+              <a class="adopt-more" data-contact="website" target="_blank" rel="noopener"><span data-t="adopt.more"></span> www.adoptrainforest.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ============ FOOTER ============ -->
@@ -208,10 +229,6 @@
     <div class="wrap">
       <div class="footer-logos" id="footerLogos"></div>
       <div class="footer-grid">
-        <div>
-          <p class="footer-tag" data-t="footer.tagline"></p>
-          <a class="adopt-link" data-contact="website" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg><span data-t="footer.adopt"></span></a>
-        </div>
         <address class="footer-contact">
           <h2 class="eyebrow" data-t="footer.contact"></h2>
           <p class="org" data-contact="organization"></p>

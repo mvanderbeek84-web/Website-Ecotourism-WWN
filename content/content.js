@@ -399,11 +399,20 @@ window.SITE = {
       },
       emailSubject: { en: "Booking request", es: "Solicitud de reserva" }
     },
+    adopt: {
+      eyebrow: { en: "Adopt rainforest", es: "Adopta bosque lluvioso" },
+      title: { en: "Make a direct contribution to nature conservation", es: "Contribuye directamente a la conservación de la naturaleza" },
+      text: { en: "Adopt Rainforest and Fundación Work with Nature work together to conserve rainforest in Costa Rica. For every €2.50 you donate, we buy and protect one square meter of rainforest, and you receive a personalized certificate.",
+              es: "Adopt Rainforest y la Fundación Work with Nature trabajan juntas por la conservación del bosque lluvioso en Costa Rica. Por cada €2,50 que donas, compramos y protegemos un metro cuadrado de bosque lluvioso, y recibes un certificado personalizado." },
+      price: { en: "€2.50", es: "€2,50" },
+      priceLabel: { en: "buys and protects 1 m² of rainforest", es: "compra y protege 1 m² de bosque lluvioso" },
+      certificate: { en: "a personalized certificate for every donor", es: "un certificado personalizado para cada donante" },
+      button: { en: "Adopt rainforest", es: "Adopta bosque lluvioso" },
+      more: { en: "More information at", es: "Más información en" }
+    },
     footer: {
-      tagline: { en: "Make a direct contribution to nature conservation: adopt square meters of rainforest.", es: "Contribuye directamente a la conservación de la naturaleza: adopta metros cuadrados de bosque lluvioso." },
       contact: { en: "Contact", es: "Contacto" },
       partnersTitle: { en: "In cooperation with", es: "En cooperación con" },
-      adopt: { en: "Adopt rainforest", es: "Adopta bosque" },
       rights: { en: "All rights reserved.", es: "Todos los derechos reservados." }
     },
     placeholderBadge: { en: "Placeholder text", es: "Texto provisional" },
