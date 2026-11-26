@@ -154,8 +154,8 @@ window.SITE = {
           key: "watchtower",
           tag: { en: "Viewpoint", es: "Mirador" },
           title: { en: "The watchtower", es: "La torre de observación" },
-          text: { en: "Climb above the trees and look out over the canopy. At dawn, mist drifts over the ridges and toucans and parrots cross the valley.",
-                  es: "Sube por encima de los árboles y contempla el dosel. Al amanecer, la neblina cubre las crestas y los tucanes y loros cruzan el valle.", todo: true },
+          text: { en: "Climb above the trees and look out over the canopy. Look for toucans singing from the treetops and king vultures rising up in the sky.",
+                  es: "Sube por encima de los árboles y contempla el dosel. Busca tucanes cantando desde las copas de los árboles y zopilotes reyes elevándose en el cielo." },
           photos: ["mistCanopy", "mistTall", "parrots"],
           photoNote: { en: "Photo of the watchtower itself still to come", es: "Falta una foto de la torre", todo: true }
         },
