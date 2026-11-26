@@ -291,6 +291,7 @@ window.SITE = {
       partners: { en: "Who we are", es: "Quiénes somos" },
       logistics: { en: "Practical info", es: "Información práctica" },
       book: { en: "Book a date", es: "Reservar fecha" },
+      reservations: { en: "Reservations", es: "Reservas" },
       menu: { en: "Menu", es: "Menú" }
     },
     hero: {
