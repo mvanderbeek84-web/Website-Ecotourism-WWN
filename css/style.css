@@ -644,3 +644,17 @@ input:focus, textarea:focus { outline: none; border-color: var(--canopy); box-sh
 .booking .summary-list dt .ic { color: var(--lime); }
 .booking .summary-total strong { color: var(--lime); }
 .booking .ref code { color: var(--lime); background: var(--sun-800); }
+
+/* Adopt Rainforest: canopy-green tinted grounds (same principle as the booking lime and the "Who we are" bark) */
+.adopt { position: relative; overflow: hidden; padding-top: 96px; background: #0D1F12; }
+.adopt::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 85% 10%, rgba(75,188,96,.24), transparent 55%), radial-gradient(ellipse at 5% 100%, rgba(75,188,96,.12), transparent 50%); }
+.adopt > .wrap { position: relative; z-index: 1; }
+.adopt-card { background: linear-gradient(135deg, rgba(28,74,39,.85) 0%, rgba(15,42,22,.9) 75%); border-color: rgba(111,203,128,.35); box-shadow: 0 30px 60px -30px rgba(0,0,0,.55); }
+.adopt-body h2 { color: #F1FAF2; }
+.adopt .eyebrow { color: var(--canopy-400); }
+.adopt-facts div { background: rgba(11,17,13,.35); border-color: rgba(111,203,128,.28); }
+.adopt-facts b, .adopt-facts b .ic { color: var(--canopy-400); }
+.adopt-facts span { color: var(--canopy-100); }
+.adopt-more { color: var(--canopy-300); }
+@media (max-width: 640px) { .adopt { padding-top: 64px; } }
