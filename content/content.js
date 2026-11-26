@@ -70,7 +70,7 @@ window.SITE = {
     macawFlight:     { file: "z9a6235",   alt: { en: "Two great green macaws in flight", es: "Dos lapas verdes en vuelo" } },
     macawPortrait:   { file: "z9a6317",   alt: { en: "Great green macaw in a tree", es: "Lapa verde en un árbol" } },
     macawCanopy:     { file: "z9a6295",   alt: { en: "Great green macaw among leaves", es: "Lapa verde entre las hojas" } },
-    parrots:         { file: "z9a6067",   alt: { en: "Pair of parrots on a branch", es: "Pareja de loros en una rama" } },
+    parrots:         { file: "watchtower3",   alt: { en: "Pair of parrots on a branch", es: "Pareja de loros en una rama" } },
     redEyedFrogs:    { file: "img-5520",  alt: { en: "Red-eyed tree frogs on a leaf", es: "Ranas calzonudas sobre una hoja" } },
     leafFrog:        { file: "z9a5938",   alt: { en: "Splendid leaf frog at night", es: "Rana de hoja de noche" } },
     glassFrog:       { file: "img-6808",  alt: { en: "Glass frog on a leaf", es: "Rana de vidrio sobre una hoja" } },
@@ -97,6 +97,11 @@ window.SITE = {
     iguanaHelmet:    { file: "z9a5863",   alt: { en: "Helmeted iguana", es: "Iguana de casco" } },
     malachite:       { file: "img-7420",  alt: { en: "Malachite butterfly", es: "Mariposa malaquita" } },
     vineSnake:       { file: "img-8672",  alt: { en: "Vine snake with open mouth", es: "Bejuquilla con la boca abierta" } },
+    saplingStop:     { file: "reforestation1", alt: { en: "Young native tree planted in a reforestation plot", es: "Árbol nativo joven en un área de reforestación" } },
+    redEyedPair:     { file: "treefrog1", alt: { en: "Pair of red-eyed tree frogs mating on a leaf", es: "Pareja de ranas calzonudas apareándose sobre una hoja" } },
+    honeycreeperStop: { file: "birding1", alt: { en: "Shining honeycreeper on a branch", es: "Mielero luciente en una rama" } },
+    motmotStop:      { file: "birding2", alt: { en: "Broad-billed motmot on a branch", es: "Momoto piquiancho en una rama" } },
+    macawFlightStop: { file: "macaw1", alt: { en: "Two great green macaws in flight", es: "Dos lapas verdes en vuelo" } },
     riverPool:       { file: "barbilla2", alt: { en: "Mossy river pool in the Barbilla rainforest", es: "Poza de río con musgo en el bosque de Barbilla" } },
     watchtowerView:  { file: "watchtower1", alt: { en: "Visitor with binoculars on the watchtower at sunset", es: "Visitante con binoculares en la torre al atardecer" } },
     watchtower:      { file: "watchtower2", alt: { en: "The watchtower rising above the trees", es: "La torre de observación sobre los árboles" } },
@@ -184,7 +189,7 @@ window.SITE = {
           title: { en: "Reforestation", es: "Reforestación" },
           text: { en: "See how former pasture is turning back into forest. Learn about the experimental scientific setup used to uncover the best restoration practices.",
                   es: "Descubre cómo antiguos potreros vuelven a ser bosque. Conoce el diseño científico experimental que se usa para descubrir las mejores prácticas de restauración." },
-          photos: ["sapling", "regrowth", "planting"],
+          photos: ["saplingStop", "regrowth", "planting"],
           impact: [
             { value: 40000, unit: "", label: { en: "native trees planted", es: "árboles nativos sembrados" } },
             { value: 43, unit: "ha", label: { en: "hectares restored", es: "hectáreas restauradas" } }
@@ -205,7 +210,7 @@ window.SITE = {
           title: { en: "Tree frog conservation", es: "Conservación de ranas arborícolas" },
           text: { en: "Learn how we protect and monitor more than a dozen species of tree frog by installing breeding ponds. Try to find eggs and tadpoles of the gliding tree frog and the splendid leaf frog, some of the most threatened animals in the forest.",
                   es: "Aprende cómo protegemos y monitoreamos más de una docena de especies de ranas arborícolas instalando estanques de reproducción. Intenta encontrar huevos y renacuajos de la rana planeadora y la rana de hoja espléndida, algunos de los animales más amenazados del bosque." },
-          photos: ["leafFrog", "redEyedFrogs", "frogEggsLeaf"]
+          photos: ["leafFrog", "redEyedPair", "frogEggsLeaf"]
         },
         {
           key: "birding",
@@ -213,7 +218,7 @@ window.SITE = {
           title: { en: "Birding hotspot", es: "Paraíso para observar aves" },
           text: { en: "This area gives birders the chance to encounter some spectacular species, like the black-crowned antpitta, ocellated antbird, semiplumbeous hawk, song wren and black hawk-eagle. More than 360 species have been observed in the area.",
                   es: "Esta zona ofrece a los observadores de aves la oportunidad de encontrar especies espectaculares, como el tororoí pechiescamoso, el hormiguero ocelado, el gavilán dorsiplomizo, el soterrey canoro y el águila tirana. Se han observado más de 360 especies en la zona." },
-          photos: ["honeycreeper", "motmot", "trogon"]
+          photos: ["honeycreeperStop", "motmotStop", "trogon"]
         },
         {
           key: "arboretum",
@@ -229,7 +234,7 @@ window.SITE = {
           title: { en: "Great green macaws", es: "Lapas verdes" },
           text: { en: "The great green macaw is critically endangered, with only one thousand individuals left worldwide. We provide them with trees for their specialized diet and for breeding. With luck, you'll hear them before you see them.",
                   es: "La lapa verde está en peligro crítico de extinción y quedan solo mil individuos en todo el mundo. Les ofrecemos árboles para su dieta especializada y para anidar. Con suerte, las oirás antes de verlas." },
-          photos: ["macawFlight", "macawPortrait", "macawNestBox"]
+          photos: ["macawFlightStop", "macawPortrait", "macawNestBox"]
         },
         {
           key: "reserve",
