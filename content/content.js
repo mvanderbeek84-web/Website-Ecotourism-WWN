@@ -408,7 +408,7 @@ window.SITE = {
       price: { en: "€2.50", es: "€2,50" },
       priceLabel: { en: "buys and protects 1 m² of rainforest", es: "compra y protege 1 m² de bosque lluvioso" },
       certificate: { en: "a personalized certificate for every donor", es: "un certificado personalizado para cada donante" },
-      button: { en: "Adopt rainforest", es: "Adopta bosque lluvioso" },
+      button: { en: "Adopt Rainforest", es: "Adopta bosque lluvioso" },
       more: { en: "More information at", es: "Más información en" }
     },
     footer: {
