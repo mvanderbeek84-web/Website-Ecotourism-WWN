@@ -24,8 +24,8 @@ window.SITE = {
   /* ---------------- Organisation & contact (footer, booking) -------- */
   contact: {
     organisation: "Fundación Work with Nature",
-    email: "maarten@adopteerregenwoud.nl",      // booking requests go here
-    emailAlt: "maarten@adoptrainforest.com",    // also shown in the footer (set to null to hide)
+    email: "maarten@adoptrainforest.com",       // booking requests go here
+    emailAlt: null,                             // a second address shown in the footer (set to null to hide)
     phone: "6082-6565",
     phoneInternational: "+50660826565",   // used for WhatsApp + tap-to-call
     whatsapp: true,                        // show WhatsApp button?
