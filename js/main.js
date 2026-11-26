@@ -113,7 +113,7 @@
     for (var i = 1; i <= 3; i++) hexes.appendChild(icon("hex", i <= TOUR.difficulty ? "on" : ""));
     var rows = [
       ["clock", f.duration, [h("span", null, [tr(TOUR.durationHours)])], TOUR.durationHours],
-      ["hex", f.difficulty, [hexes, h("span", null, [tr(f.levels[TOUR.difficulty - 1])])]],
+      ["mountain", f.difficulty, [hexes, h("span", null, [tr(f.levels[TOUR.difficulty - 1])])]],
       ["users", f.group, [h("span", null, [tr(f.upTo) + " " + TOUR.groupMax + " "]), h("small", null, [tr(f.people)])]],
       ["tag", f.price, [h("span", null, [money(TOUR.pricePerPerson) + " "]), h("small", null, [tr(f.perPerson)])], TOUR.priceIsPlaceholder ? { todo: true } : null]
     ];
