@@ -310,12 +310,13 @@ p { margin: 0; }
 .mosaic figure:hover figcaption, .mosaic figure:focus-within figcaption { opacity: 1; transform: none; }
 
 /* Impact stat */
-.impact { margin-top: 24px; padding: 20px 24px; border-radius: var(--r-lg); background: var(--bark-800); border: 1px solid rgba(188,170,153,.18); max-width: 420px; }
+.impact { margin-top: 24px; padding: 20px 24px; border-radius: var(--r-lg); background: var(--bark-800); border: 1px solid rgba(188,170,153,.18); max-width: 460px; display: flex; flex-wrap: wrap; gap: 20px 32px; }
+.impact-stat { flex: 1 1 140px; }
+.impact-stat + .impact-stat { border-left: 1px solid rgba(188,170,153,.18); padding-left: 32px; }
+@media (max-width: 420px) { .impact-stat + .impact-stat { border-left: 0; padding-left: 0; } }
 .impact-num { font: 800 44px/1 var(--f-slab); color: var(--cream); }
 .impact-num small { font: 500 18px var(--f-slab); color: var(--clay); margin-left: 4px; }
 .impact p { color: var(--clay); font-size: 14px; line-height: 20px; margin-top: 8px; }
-.impact-bar { margin-top: 16px; height: 8px; border-radius: var(--r-pill); background: var(--bark-900); overflow: hidden; }
-.impact-bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--fern), var(--lime)); transition: width 1.8s var(--ease); }
 
 /* ---------------- Partners ---------------- */
 .partners { background: var(--bark-900); position: relative; overflow: hidden; }

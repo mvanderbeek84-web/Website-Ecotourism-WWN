@@ -245,11 +245,15 @@
       ]);
       if (s.photoNote && S.showPlaceholderMarkers) body.appendChild(h("span", { class: "todo-note" }, [tr(s.photoNote)]));
       if (s.impact) {
-        var lab = h("p"); setText(lab, s.impact.label);
-        body.appendChild(h("div", { class: "impact", "data-value": s.impact.value, "data-total": s.impact.total }, [
-          h("div", { class: "impact-num" }, [h("span", { class: "count" }, ["0"]), h("small", null, [s.impact.unit])]),
-          lab, h("div", { class: "impact-bar" }, [h("i")])
-        ]));
+        // one or more big numbers that count up, e.g. trees planted and hectares restored
+        var stats = [].concat(s.impact).map(function (st) {
+          var lab = h("p"); setText(lab, st.label);
+          return h("div", { class: "impact-stat" }, [
+            h("div", { class: "impact-num" }, [h("span", { class: "count", "data-value": st.value }, ["0"]), st.unit ? h("small", null, [st.unit]) : null]),
+            lab
+          ]);
+        });
+        body.appendChild(h("div", { class: "impact" }, stats));
       }
       var media;
       if (s.layout === "mosaic") {
@@ -557,11 +561,14 @@
   function countUp(root) {
     var box = root.querySelector && root.querySelector(".impact"); if (!box || box.dataset.done) return;
     box.dataset.done = "1";
-    var v = +box.dataset.value, t = +box.dataset.total, el = box.querySelector(".count"), bar = box.querySelector(".impact-bar i");
-    setTimeout(function () { bar.style.width = Math.min(100, v / t * 100) + "%"; }, 200);
-    if (reduceMotion) { el.textContent = v; return; }
-    var t0 = null;
-    (function step(ts) { if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / 1600); el.textContent = Math.round(v * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); })(performance.now());
+    var sep = lang === "es" ? "." : ",";
+    function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep); }
+    box.querySelectorAll(".count").forEach(function (el) {
+      var v = +el.dataset.value;
+      if (reduceMotion) { el.textContent = fmt(v); return; }
+      var t0 = null;
+      (function step(ts) { if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / 1600); el.textContent = fmt(Math.round(v * (1 - Math.pow(1 - p, 3)))); if (p < 1) requestAnimationFrame(step); })(performance.now());
+    });
   }
 
   function setupScroll() {

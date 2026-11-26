@@ -166,8 +166,10 @@ window.SITE = {
           text: { en: "See how former pasture is turning back into forest. Learn about the experimental scientific setup used to uncover the best restoration practices.",
                   es: "Descubre cómo antiguos potreros vuelven a ser bosque. Conoce el diseño científico experimental que se usa para descubrir las mejores prácticas de restauración." },
           photos: ["sapling", "guide", "leafShadow"],
-          impact: { value: 278, total: 2000, unit: "ha",
-                    label: { en: "hectares restored of our 2,000 ha goal", es: "hectáreas restauradas de nuestra meta de 2.000 ha", todo: true } }
+          impact: [
+            { value: 40000, unit: "", label: { en: "native trees planted", es: "árboles nativos sembrados" } },
+            { value: 43, unit: "ha", label: { en: "hectares restored", es: "hectáreas restauradas" } }
+          ]
         },
         {
           key: "biodiversity",
