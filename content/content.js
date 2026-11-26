@@ -231,8 +231,8 @@ window.SITE = {
       logistics: {
         reserve: {
           title: { en: "How to book", es: "Cómo reservar" },
-          text: { en: "Choose a date and group size below and send your request by email or WhatsApp (6082-6565). Book at least 2 days ahead. We confirm availability and the start time with you, and your booking is final once we confirm.",
-                  es: "Elige una fecha y el tamaño del grupo abajo y envía tu solicitud por correo o WhatsApp (6082-6565). Reserva con al menos 2 días de anticipación. Confirmamos contigo la disponibilidad y la hora de inicio, y la reserva queda firme cuando la confirmamos." }
+          text: { en: "Choose a date and group size below and send your request by email or WhatsApp (6082-6565). Book at least 2 days ahead. We'll get back to you to check availability and agree on a start time. Your booking is final once you receive our confirmation.",
+                  es: "Elige una fecha y el tamaño del grupo abajo y envía tu solicitud por correo o WhatsApp (6082-6565). Reserva con al menos 2 días de anticipación. Te contactaremos para revisar la disponibilidad y acordar la hora de inicio. Tu reserva queda firme cuando recibas nuestra confirmación." }
         },
         pricing: {
           title: { en: "Pricing", es: "Precio" },
