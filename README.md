@@ -82,11 +82,17 @@ The page is prepared for **https://www.visitbarbilla.com/**. That address appear
   Facebook, etc.
 - The Spanish version has its own address: `?lang=es` (English: `?lang=en`).
 
+## Visitor statistics (GoatCounter)
+
+Set your GoatCounter site code in `content/content.js` under `analytics: { goatcounterCode: "…" }`.
+With `null` statistics are off. It is never counted on a local copy (double-clicked file) or on localhost.
+See the numbers at `https://<code>.goatcounter.com`.
+
 ## Security
 
 - The site has no server, database or login, and it stores no visitor data. A booking request
   only leaves the visitor's device when they press send in their own email app or WhatsApp.
   The only thing remembered in the browser is the chosen language (`wwn-lang`).
 - The `Content-Security-Policy` line at the top of `index.html` lets the page load only its own
-  files plus the Google Maps embed. When you add an outside service (form endpoint, analytics,
+  files plus the Google Maps embed and GoatCounter. When you add an outside service (form endpoint, analytics,
   video host, chat widget), add its address to that line, or it will be blocked.

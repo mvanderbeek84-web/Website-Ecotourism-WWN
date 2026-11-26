@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Security: only load scripts, fonts and images from this site; the map may come from Google Maps.
+  <!-- Security: only load scripts, fonts and images from this site; the map may come from Google Maps,
+       visitor statistics from GoatCounter (gc.zgo.at / goatcounter.com).
        If you add an outside service later (booking form endpoint, analytics, video host), add its address here. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.goatcounter.com; font-src 'self'; frame-src https://maps.google.com https://www.google.com; connect-src 'self' https://*.goatcounter.com; object-src 'none'; base-uri 'self'; form-action 'self'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Barbilla Rainforest Tour · Fundación Work with Nature</title>
   <meta name="description" content="Visit National Park Barbilla, sector Matina, Costa Rica. A guided day in the Caribbean lowland rainforest by Fundación Work with Nature.">
@@ -289,7 +290,7 @@
               <div><b><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg></b><span data-t="adopt.certificate"></span></div>
             </div>
             <div class="adopt-actions">
-              <a class="adopt-link" data-contact="website" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg><span data-t="adopt.button"></span></a>
+              <a class="adopt-link" data-contact="adopt" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg><span data-t="adopt.button"></span></a>
               <a class="adopt-more" data-contact="website" target="_blank" rel="noopener"><span data-t="adopt.more"></span> www.adoptrainforest.com</a>
             </div>
           </div>
@@ -316,6 +317,7 @@
           <a href="#partners" data-t="nav.partners"></a>
           <a href="#logistics" data-t="nav.logistics"></a>
           <a href="#book" data-t="nav.book"></a>
+          <a href="privacy.html" id="privacyLink" data-t="footer.privacy"></a>
           <button class="lang-toggle lang-toggle-text" type="button" data-lang-toggle data-t="langToggle"></button>
         </div>
       </div>

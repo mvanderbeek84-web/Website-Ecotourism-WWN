@@ -29,7 +29,17 @@ window.SITE = {
     phone: "6082-6565",
     phoneInternational: "+50660826565",   // used for WhatsApp + tap-to-call
     whatsapp: true,                        // show WhatsApp button?
-    website: "https://adoptrainforest.com"
+    website: "https://www.adoptrainforest.com/",                 // English site of Stichting Adopteer Regenwoud ("www." matters: without it you land on the Dutch site)
+    adoptUrl: "https://www.adoptrainforest.com/adopt-rainforest/"  // where the "Adopt rainforest" button goes
+  },
+
+  /* ---------------- Visitor statistics (GoatCounter) ---------------
+     Privacy-friendly: no cookies, no personal data, no cookie banner needed.
+     Create a free account at goatcounter.com, pick a site code (for example
+     "visitbarbilla"), and put it here between the quotes. null = off.
+     Your statistics are then at https://<code>.goatcounter.com (only you can log in). */
+  analytics: {
+    goatcounterCode: null
   },
 
   /* ---------------- Where booking requests go ----------------------
@@ -429,7 +439,8 @@ window.SITE = {
     footer: {
       contact: { en: "Contact", es: "Contacto" },
       partnersTitle: { en: "In cooperation with", es: "En cooperación con" },
-      rights: { en: "All rights reserved.", es: "Todos los derechos reservados." }
+      rights: { en: "All rights reserved.", es: "Todos los derechos reservados." },
+      privacy: { en: "Privacy statement", es: "Declaración de privacidad" }
     },
     placeholderBadge: { en: "Placeholder text", es: "Texto provisional" },
     langToggle: { en: "Español", es: "English" }

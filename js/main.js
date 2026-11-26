@@ -82,6 +82,7 @@
     var lt = $("#langToggle");
     lt.querySelectorAll(".lang-seg").forEach(function (s) { s.classList.toggle("on", s.dataset.seg === lang); });
     lt.setAttribute("aria-label", "EN / ES · " + tr(S.text.langToggle));   // includes the visible "EN ES" text (accessibility)
+    var pl = $("#privacyLink"); if (pl) pl.href = "privacy.html?lang=" + lang;
     var vt = $("#motionToggle .sr"); if (vt) vt.textContent = tr(heroPaused ? S.text.hero.play : S.text.hero.pause);
   }
 
@@ -97,6 +98,7 @@
       if (k === "phone") { el.href = "tel:" + c.phoneInternational; if (span) span.textContent = "+506 " + c.phone; }
       if (k === "whatsapp") { el.href = "https://wa.me/" + c.phoneInternational.replace(/\D/g, ""); el.hidden = !c.whatsapp; }
       if (k === "website") el.href = c.website;
+      if (k === "adopt") el.href = c.adoptUrl || c.website;
     });
     $("#waBtn").hidden = !c.whatsapp;
     $("#year").textContent = new Date().getFullYear();
@@ -652,4 +654,15 @@
   renderAll(false);
   document.documentElement.classList.add("ready");
   setupHero(); fireflies(); setupSteppers(); setupForm(); setupReveal(); setupScroll(); setupUI();
+
+  /* Visitor statistics (GoatCounter), only when a site code is set in content.js.
+     Not on a local copy (file://) and not while testing on localhost. */
+  (function () {
+    var code = S.analytics && S.analytics.goatcounterCode;
+    if (!code || !/^[a-z0-9-]+$/.test(code) || location.protocol === "file:" || /^(localhost|127\.)/.test(location.hostname)) return;
+    var s = document.createElement("script");
+    s.async = true; s.src = "https://gc.zgo.at/count.js";
+    s.setAttribute("data-goatcounter", "https://" + code + ".goatcounter.com/count");
+    document.body.appendChild(s);
+  })();
 })();
