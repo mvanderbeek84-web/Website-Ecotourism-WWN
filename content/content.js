@@ -108,7 +108,8 @@ window.SITE = {
     adoptRainforest: { file: "assets/logos/adopt-rainforest.png", name: "Adopt Rainforest" },
     workWithNature:  { file: "assets/logos/work-with-nature.png", name: "Fundación Work with Nature" },
     sinac:           { file: "assets/logos/sinac.png",            name: "SINAC" },
-    barbilla:        { file: "assets/logos/barbilla.png",         name: "Parque Nacional Barbilla" }
+    barbilla:        { file: "assets/logos/barbilla.png",         name: "Parque Nacional Barbilla" },
+    tapaTours:       { file: "assets/logos/tapa-tours.png",       name: "Tapa Tours" }
   },
 
   /* ---------------- Moving photo ribbon (under the hero) ----------- */
@@ -322,7 +323,7 @@ window.SITE = {
           text: { en: "Organizer. A Costa Rican foundation restoring rainforest and protecting wildlife on the edge of National Park Barbilla.", es: "Organizador. Una fundación costarricense que restaura el bosque y protege la vida silvestre en el borde del Parque Nacional Barbilla." } },
         { logo: "sinac", title: { en: "SINAC", es: "SINAC" },
           text: { en: "Government partner. Costa Rica's National System of Conservation Areas, which manages National Park Barbilla.", es: "Socio gubernamental. El Sistema Nacional de Áreas de Conservación, que administra el Parque Nacional Barbilla." } },
-        { icon: "guide", title: { en: "Licensed local guides", es: "Guías locales con licencia" },
+        { logo: "tapaTours", title: { en: "Licensed local guides", es: "Guías locales con licencia" },
           text: { en: "Certified naturalist guides from the communities around the park.", es: "Guías naturalistas certificados de las comunidades alrededor del parque.", todo: true } },
       ],
       /* Other partners, shown as a list under the cards */
