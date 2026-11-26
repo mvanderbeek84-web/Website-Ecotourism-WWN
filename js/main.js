@@ -316,9 +316,14 @@
     g.appendChild(card(1, "calendar", L.reserve));
     g.appendChild(card(2, "tag", L.pricing, big));
     g.appendChild(card(3, "clock", L.duration, dur));
-    g.appendChild(h("div", { class: "log-photo" }, [photo("guide", "50vw")]));
-    g.appendChild(card(4, "check", L.included, null, "wide"));
-    g.appendChild(card(5, "leaf", L.bring, null, "wide bring"));
+    var G = L.getThere, ll = G.lat + "," + G.lng;
+    var mapBox = h("div", { class: "log-map" }, [
+      h("iframe", { src: "https://maps.google.com/maps?q=" + ll + "&z=13&output=embed", title: tr(G.title), loading: "lazy", referrerpolicy: "no-referrer-when-downgrade" }),
+      h("a", { class: "btn btn-ghost btn-sm", href: "https://www.google.com/maps/search/?api=1&query=" + ll, target: "_blank", rel: "noopener" }, [tr(G.mapButton), icon("arrow")])
+    ]);
+    var gt = card(4, "pin", G, null, "get-there"); gt.appendChild(mapBox); g.appendChild(gt);
+    g.appendChild(card(5, "check", L.included, null, "wide"));
+    g.appendChild(card(6, "leaf", L.bring, null, "wide bring"));
   }
 
   /* ---------------- Footer logos ---------------- */

@@ -366,8 +366,9 @@ p { margin: 0; }
 .checklist li { display: flex; gap: 12px; align-items: flex-start; color: var(--mist); }
 .checklist svg { width: 14px; height: 14px; margin-top: 6px; flex: none; fill: var(--canopy); }
 .log-card.bring .checklist svg { fill: var(--clay); }
-.log-photo { grid-column: span 2; border-radius: var(--r-lg); overflow: hidden; min-height: 220px; position: relative; }
-.log-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.log-map { margin-top: 16px; position: relative; }
+.log-map iframe { display: block; width: 100%; height: 180px; border: 0; border-radius: var(--r-md); background: var(--night-800); }
+.log-map .btn { margin-top: 12px; }
 
 /* ---------------- Booking ---------------- */
 .booking { position: relative; padding-bottom: var(--section); overflow: hidden; }
@@ -487,7 +488,6 @@ input:focus, textarea:focus { outline: none; border-color: var(--canopy); box-sh
   .fact:nth-child(3) { border-left: 0; }
   .fact:nth-child(n+3) { border-top: 1px solid var(--night-700); }
   .log-card, .log-card.wide { grid-column: span 2; }
-  .log-photo { grid-column: span 6; min-height: 260px; }
 }
 @media (max-width: 900px) {
   .main-nav {
@@ -534,7 +534,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--canopy); box-sh
   .partner { flex-direction: column; align-items: flex-start; }
   .partner .icon-plate { width: 56px; height: 56px; }
   .partner .icon-plate svg.bg { width: 100%; left: 0; }
-  .log-card, .log-card.wide, .log-photo { grid-column: span 6; }
+  .log-card, .log-card.wide { grid-column: span 6; }
   .panel { padding: 20px 16px; }
   .cal-grid { border-spacing: 3px; }
   .day { font-size: 14px; min-height: 36px; }

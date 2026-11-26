@@ -254,6 +254,15 @@ window.SITE = {
             { en: "Part of your ticket goes to conservation and reforestation", es: "Parte de tu entrada apoya la conservación y la reforestación" }
           ]
         },
+        getThere: {
+          title: { en: "How to get there", es: "Cómo llegar" },
+          text: { en: "You need your own 4x4 vehicle to reach the starting point. Your guide meets you there at the agreed time. There is parking on the property.",
+                  es: "Necesitas tu propio vehículo 4x4 para llegar al punto de inicio. Tu guía te espera allí a la hora acordada. Hay parqueo dentro de la propiedad." },
+          mapButton: { en: "Open in Google Maps", es: "Abrir en Google Maps" },
+          // starting point (latitude, longitude); the map pin and the button use these
+          lat: 9.994860418201526,
+          lng: -83.36365245973658
+        },
         bring: {
           title: { en: "What to bring", es: "Qué traer" },
           items: [
@@ -341,7 +350,7 @@ window.SITE = {
     },
     booking: {
       eyebrow: { en: "Reservations", es: "Reservas" },
-      title: { en: "Pick your day in the forest", es: "Elige tu día en el bosque" },
+      title: { en: "Pick your day in Barbilla", es: "Elige tu día en Barbilla" },
       intro: { en: "Choose a date and tell us who's coming. This is a request: we'll confirm by email or WhatsApp and agree the start time with you. No payment yet.",
                es: "Elige una fecha y cuéntanos quién viene. Esto es una solicitud: confirmamos por correo o WhatsApp y acordamos contigo la hora de inicio. Sin pago por ahora." },
       date: { en: "Date", es: "Fecha" },
