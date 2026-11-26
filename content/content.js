@@ -197,7 +197,7 @@ window.SITE = {
           tag: { en: "Birding", es: "Aves" },
           title: { en: "Birding hotspot", es: "Paraíso para observar aves" },
           text: { en: "This area gives birders the chance to encounter some spectacular species, like the black-crowned antpitta, ocellated antbird, semiplumbeous hawk, song wren and black hawk-eagle. More than 360 species have been observed in the area.",
-                  es: "Esta zona ofrece a los observadores de aves la oportunidad de encontrar especies espectaculares, como el tororoí coroninegro, el hormiguero ocelado, el gavilán dorsiplomizo, el soterrey canoro y el águila tirana. Se han observado más de 360 especies en la zona." },
+                  es: "Esta zona ofrece a los observadores de aves la oportunidad de encontrar especies espectaculares, como el tororoí pechiescamoso, el hormiguero ocelado, el gavilán dorsiplomizo, el soterrey canoro y el águila tirana. Se han observado más de 360 especies en la zona." },
           photos: ["honeycreeper", "broadBilledMotmot", "hermit"]
         },
         {
