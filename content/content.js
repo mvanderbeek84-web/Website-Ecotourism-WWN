@@ -97,6 +97,18 @@ window.SITE = {
     iguanaHelmet:    { file: "z9a5863",   alt: { en: "Helmeted iguana", es: "Iguana de casco" } },
     malachite:       { file: "img-7420",  alt: { en: "Malachite butterfly", es: "Mariposa malaquita" } },
     vineSnake:       { file: "img-8672",  alt: { en: "Vine snake with open mouth", es: "Bejuquilla con la boca abierta" } },
+    riverPool:       { file: "barbilla2", alt: { en: "Mossy river pool in the Barbilla rainforest", es: "Poza de río con musgo en el bosque de Barbilla" } },
+    watchtowerView:  { file: "watchtower1", alt: { en: "Visitor with binoculars on the watchtower at sunset", es: "Visitante con binoculares en la torre al atardecer" } },
+    watchtower:      { file: "watchtower2", alt: { en: "The watchtower rising above the trees", es: "La torre de observación sobre los árboles" } },
+    regrowth:        { file: "reforestation2", alt: { en: "Young forest growing back on former pasture", es: "Bosque joven creciendo en un antiguo potrero" } },
+    planting:        { file: "reforestation3", alt: { en: "Volunteers planting native trees", es: "Voluntarios plantando árboles nativos" } },
+    yellowTreeFrog:  { file: "frog-conservation1", alt: { en: "Tree frog on a branch at night", es: "Rana arborícola en una rama de noche" } },
+    frogEggsLeaf:    { file: "tree-frog2", alt: { en: "Frog eggs developing on a leaf", es: "Huevos de rana desarrollándose sobre una hoja" } },
+    trogon:          { file: "birding3", alt: { en: "Slaty-tailed trogon on a branch", es: "Trogón coliplomizo en una rama" } },
+    macawNestBox:    { file: "macaw3", alt: { en: "Climber installing a nest box for macaws high in a tree", es: "Escalador instalando un nido artificial para lapas en lo alto de un árbol" } },
+    arboretumTree:   { file: "arboretum1", alt: { en: "Young native tree in the arboretum", es: "Árbol nativo joven en el arboreto" } },
+    arboretumLeaf:   { file: "arboretum3", alt: { en: "Hand turning over a large leaf to identify the tree", es: "Mano volteando una hoja grande para identificar el árbol" } },
+    arboretumLeaves: { file: "arboretum4", alt: { en: "Hands examining the leaves of a native tree", es: "Manos examinando las hojas de un árbol nativo" } },
     moth:            { file: "rusted-fiestamark2", alt: { en: "Colorful moth on a leaf", es: "Polilla colorida sobre una hoja" } }
   },
 
@@ -156,7 +168,7 @@ window.SITE = {
           title: { en: "National Park Barbilla", es: "Parque Nacional Barbilla" },
           text: { en: "Step into one of Costa Rica's least-visited national parks, where the Caribbean lowlands rise into the foothills of the Talamanca range. Sector Matina protects rivers, primary forest and an extraordinary diversity of life.",
                   es: "Entra en uno de los parques nacionales menos visitados de Costa Rica, donde las tierras bajas del Caribe se elevan hacia las faldas de la cordillera de Talamanca. El sector Matina protege ríos, bosque primario y una diversidad de vida extraordinaria.", todo: true },
-          photos: ["parkLandscape", "riverTall", "tallTree"]
+          photos: ["riverPool", "parkLandscape", "tallTree"]
         },
         {
           key: "watchtower",
@@ -164,8 +176,7 @@ window.SITE = {
           title: { en: "The watchtower", es: "La torre de observación" },
           text: { en: "Climb above the trees and look out over the canopy. Look for toucans singing from the treetops and king vultures rising up in the sky.",
                   es: "Sube por encima de los árboles y contempla el dosel. Busca tucanes cantando desde las copas de los árboles y zopilotes reyes elevándose en el cielo." },
-          photos: ["mistCanopy", "mistTall", "parrots"],
-          photoNote: { en: "Photo of the watchtower itself still to come", es: "Falta una foto de la torre", todo: true }
+          photos: ["watchtowerView", "watchtower", "parrots"],
         },
         {
           key: "reforestation",
@@ -173,7 +184,7 @@ window.SITE = {
           title: { en: "Reforestation", es: "Reforestación" },
           text: { en: "See how former pasture is turning back into forest. Learn about the experimental scientific setup used to uncover the best restoration practices.",
                   es: "Descubre cómo antiguos potreros vuelven a ser bosque. Conoce el diseño científico experimental que se usa para descubrir las mejores prácticas de restauración." },
-          photos: ["sapling", "guide", "leafShadow"],
+          photos: ["sapling", "regrowth", "planting"],
           impact: [
             { value: 40000, unit: "", label: { en: "native trees planted", es: "árboles nativos sembrados" } },
             { value: 43, unit: "ha", label: { en: "hectares restored", es: "hectáreas restauradas" } }
@@ -194,7 +205,7 @@ window.SITE = {
           title: { en: "Tree frog conservation", es: "Conservación de ranas arborícolas" },
           text: { en: "Learn how we protect and monitor more than a dozen species of tree frog by installing breeding ponds. Try to find eggs and tadpoles of the gliding tree frog and the splendid leaf frog, some of the most threatened animals in the forest.",
                   es: "Aprende cómo protegemos y monitoreamos más de una docena de especies de ranas arborícolas instalando estanques de reproducción. Intenta encontrar huevos y renacuajos de la rana planeadora y la rana de hoja espléndida, algunos de los animales más amenazados del bosque." },
-          photos: ["redEyedFrogs", "leafFrog", "glassFrogDiane", "frogEggs", "loquaciousFrogs"]
+          photos: ["yellowTreeFrog", "redEyedFrogs", "frogEggsLeaf"]
         },
         {
           key: "birding",
@@ -202,7 +213,7 @@ window.SITE = {
           title: { en: "Birding hotspot", es: "Paraíso para observar aves" },
           text: { en: "This area gives birders the chance to encounter some spectacular species, like the black-crowned antpitta, ocellated antbird, semiplumbeous hawk, song wren and black hawk-eagle. More than 360 species have been observed in the area.",
                   es: "Esta zona ofrece a los observadores de aves la oportunidad de encontrar especies espectaculares, como el tororoí pechiescamoso, el hormiguero ocelado, el gavilán dorsiplomizo, el soterrey canoro y el águila tirana. Se han observado más de 360 especies en la zona." },
-          photos: ["honeycreeper", "broadBilledMotmot", "hermit"]
+          photos: ["honeycreeper", "motmot", "trogon"]
         },
         {
           key: "arboretum",
@@ -210,8 +221,7 @@ window.SITE = {
           title: { en: "The arboretum", es: "El arboreto" },
           text: { en: "Walk among more than 100 native tree species in our living tree museum. Your guide explains which trees have medicinal properties, which are ecologically important and which have spiritual value.",
                   es: "Camina entre más de 100 especies de árboles nativos en nuestro museo vivo de árboles. Tu guía te explica qué árboles tienen propiedades medicinales, cuáles son importantes para el ecosistema y cuáles tienen un valor espiritual." },
-          photos: ["tallTree", "leafShadow", "tortoiseBeetle"],
-          photoNote: { en: "Arboretum photos still to come", es: "Faltan fotos del arboreto", todo: true }
+          photos: ["arboretumTree", "arboretumLeaf", "arboretumLeaves"],
         },
         {
           key: "macaws",
@@ -219,7 +229,7 @@ window.SITE = {
           title: { en: "Great green macaws", es: "Lapas verdes" },
           text: { en: "The great green macaw is critically endangered, with only one thousand individuals left worldwide. We provide them with trees for their specialized diet and for breeding. With luck, you'll hear them before you see them.",
                   es: "La lapa verde está en peligro crítico de extinción y quedan solo mil individuos en todo el mundo. Les ofrecemos árboles para su dieta especializada y para anidar. Con suerte, las oirás antes de verlas." },
-          photos: ["macawFlight", "macawPortrait", "macawCanopy"]
+          photos: ["macawFlight", "macawPortrait", "macawNestBox"]
         },
         {
           key: "reserve",
