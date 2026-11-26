@@ -613,3 +613,34 @@ input:focus, textarea:focus { outline: none; border-color: var(--canopy); box-sh
   .hero-panel .hero-sub { font-size: 16px; line-height: 25px; margin-bottom: 20px; }
 }
 .hero-panel .hero-sub { opacity: 1; }
+
+/* Booking: warm sunlit-lime grounds (like the bark tint in "Who we are") */
+.booking { --sun-950: #15180A; --sun-900: #1F240C; --sun-800: #2B3211; --sun-700: #3E481B; --sun-600: #56622A;
+  background: var(--sun-950); }
+.booking::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at 85% 8%, rgba(202,226,96,.2), transparent 55%), radial-gradient(ellipse at 0% 100%, rgba(202,226,96,.1), transparent 50%); }
+.booking > .wrap { z-index: 2; }
+.booking-bg::after { background: linear-gradient(180deg, var(--night-950) 0%, rgba(19,21,10,.55) 40%, var(--sun-950) 100%); }
+.booking .section-head h2 { color: #F4F8E4; }
+.booking .section-head .lead { color: #D7DEB9; }
+.booking .panel { background: var(--sun-900); border-color: var(--sun-700); }
+.booking .summary { border-color: rgba(202,226,96,.35); background: linear-gradient(180deg, var(--sun-800), var(--sun-900)); }
+.booking .day { background: var(--sun-800); }
+.booking .day.today { border-color: var(--sun-600); }
+.booking .day:disabled { background: transparent; color: var(--sun-600); }
+.booking .day[aria-pressed="true"] { background: var(--lime); border-color: var(--lime); color: var(--night-950); }
+.booking .day:hover:not(:disabled) { border-color: var(--lime); }
+.booking .cal-legend span::before { background: var(--sun-800); }
+.booking .cal-legend .sel::before { background: var(--lime); }
+.booking .cal-legend .off::before { background: transparent; border-color: var(--sun-600); }
+.booking .cal-nav button { border-color: var(--sun-600); }
+.booking .stepper-ctl, .booking input, .booking textarea { background: var(--sun-950); border-color: var(--sun-600); }
+.booking .stepper-ctl { border-color: var(--sun-700); }
+.booking .step-btn { background: var(--sun-800); }
+.booking .step-btn:hover:not(:disabled) { background: var(--sun-700); }
+.booking .seg { border-color: var(--sun-600); }
+.booking .seg button[aria-checked="true"] { background: var(--sun-700); }
+.booking .summary-list div { border-bottom-color: var(--sun-700); }
+.booking .summary-list dt .ic { color: var(--lime); }
+.booking .summary-total strong { color: var(--lime); }
+.booking .ref code { color: var(--lime); background: var(--sun-800); }
