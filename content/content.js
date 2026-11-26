@@ -44,23 +44,20 @@ window.SITE = {
   },
 
   /* ---------------- Hero background ---------------------------------
-     The hero is photo IMG_6978 split into three depth layers (sky with
-     the far mountains, the forest, and the grass in front). The layers
-     pan slowly and move at different speeds, which gives a 3D effect.
-     It also tilts a little with the mouse on a computer.
-     panSeconds: how long one slow pan back and forth takes.
-     depth:      strength of the 3D effect (0 = flat, 1 = normal, 1.5 = strong).
-     mist:       soft mist drifting through the valley (true / false).
-     The layer files are assets/img/hero-sky / hero-land / hero-fg.     */
+     The hero is photo Barbilla1 (assets/img/hero-barbilla1-l/-s.jpg).
+     On a computer it moves and tilts slightly with the mouse.
+     photo:      short name from PHOTOS (used for the description text).
+     depth:      how much it moves (0 = still, 1 = normal, 1.5 = more).
+     autoMove:   true = also pan slowly by itself (and on phones).        */
   heroScene: {
-    photo: "parkLandscape",
-    panSeconds: 60,
+    photo: "barbilla1",
     depth: 1,
-    mist: true
+    autoMove: false
   },
 
   /* ---------------- Photos (short name -> file) -------------------- */
   PHOTOS: {
+    barbilla1:       { file: "hero-barbilla1", alt: { en: "Rainforest canopy with mist in the valleys of Barbilla", es: "Dosel del bosque lluvioso con neblina en los valles de Barbilla" } },
     parkLandscape:   { file: "img-6978",  alt: { en: "Forested hills of the Talamanca foothills", es: "Colinas boscosas al pie de la Talamanca" } },
     mistCanopy:      { file: "reserve-3", alt: { en: "Morning mist over the rainforest canopy", es: "Neblina matutina sobre el dosel del bosque" } },
     mistTall:        { file: "reserve-6", alt: { en: "Mist rising between forested ridges", es: "Neblina entre las crestas del bosque" } },
@@ -345,8 +342,8 @@ window.SITE = {
       /* Other partners, shown as a list under the cards */
       /* Impact numbers shown under the intro */
       stats: [
+        { value: { en: "310 ha", es: "310 ha" }, label: { en: "of rainforest protected", es: "de bosque lluvioso protegidas" } },
         { value: { en: "40,000", es: "40.000" }, label: { en: "native trees planted", es: "árboles nativos sembrados" } },
-        { value: { en: "43 ha", es: "43 ha" }, label: { en: "restored", es: "restauradas" } },
         { value: { en: "1,000+", es: "1.000+" }, label: { en: "species recorded", es: "especies registradas" } }
       ],
       othersTitle: { en: "Also in cooperation with", es: "También en cooperación con" },

@@ -37,23 +37,18 @@ between the quotes, save, and reload the page.
    `myPhoto: { file: "myphoto", alt: { en: "…", es: "…" } },`
 3. Use `"myPhoto"` in the `photos: [...]` list of a tour stop.
 
-## Hero background (moving 3D photo)
+## Hero background
 
-The hero uses photo IMG_6978, split into three depth layers in `assets/img/`:
-`hero-sky` (sky and far mountains), `hero-land` (the forest) and `hero-fg` (the grass in front).
-The layers pan slowly and move at different speeds, so the landscape looks three-dimensional. On a
-computer it also tilts a little toward the mouse. Soft mist drifts through the valley.
+The hero shows photo Barbilla1 (`assets/img/hero-barbilla1-l.jpg` and `-s.jpg`). On a computer it
+moves and tilts slightly when you move the mouse over it. Visitors whose device asks for reduced
+motion see it still.
 
 Settings are under `heroScene` in `content/content.js`:
-- `panSeconds`: how long one slow pan back and forth takes (higher = slower)
-- `depth`: strength of the 3D effect (0 = flat, 1 = normal, 1.5 = strong)
-- `mist`: `true` or `false`
+- `depth`: how much it moves (0 = still, 1 = normal, 1.5 = more)
+- `autoMove`: `true` makes it also pan slowly by itself (with a pause button), `false` = mouse only
 
-Visitors can pause the motion with the button at the bottom right. Visitors whose device asks for
-reduced motion see the still photo.
-
-To use a different photo, the layers have to be cut again (sky, land and foreground with
-transparent backgrounds). Ask Claude to do it, or keep the same file names.
+To use another photo, make a 2400 px and a 1200 px copy, save them over the two hero files
+(same names), and reload.
 
 ## Bookings
 

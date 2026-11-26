@@ -124,11 +124,11 @@
   /* Hero: one photo split into depth layers that pan slowly and tilt in 3D */
   function setupHero() {
     var cfg = S.heroScene || {}, hero = $("#hero"), scene = $("#scene"), btn = $("#motionToggle");
-    var p = S.PHOTOS[cfg.photo || "parkLandscape"];
+    var p = S.PHOTOS[cfg.photo || "barbilla1"];
     scene.setAttribute("aria-label", tr(p.alt));
     if (cfg.mist === false) $$(".mist", scene).forEach(function (m) { m.style.display = "none"; });
     var layers = $$(".layer", scene).map(function (el) { return { el: el, d: parseFloat(el.dataset.depth) || 1, mist: el.classList.contains("mist") }; });
-    var D = cfg.depth == null ? 1 : cfg.depth, period = (cfg.panSeconds || 60) * 1000;
+    var D = cfg.depth == null ? 1 : cfg.depth, period = (cfg.panSeconds || 60) * 1000, auto = cfg.autoMove !== false;
     var W = 0, H = 0, sw = 0, sh = 0, mouse = null, cur = { x: 0, y: 0 }, running = false, raf, t0 = performance.now(), offset = 0;
 
     function size() {
@@ -140,13 +140,13 @@
     }
     function draw(now) {
       var t = now - t0 + offset, ph = t / period * Math.PI * 2;
-      var pan = Math.sin(ph);
-      // where the viewer "looks": the mouse on computers, a slow drift on phones
-      var tx = mouse ? mouse.x : Math.sin(t / 17000) * 0.45;
-      var ty = mouse ? mouse.y : Math.sin(t / 23000) * 0.3;
+      var pan = auto ? Math.sin(ph) : 0;
+      // where the viewer "looks": the mouse on computers, a slow drift on phones (only with autoMove)
+      var tx = mouse ? mouse.x : auto ? Math.sin(t / 17000) * 0.45 : 0;
+      var ty = mouse ? mouse.y : auto ? Math.sin(t / 23000) * 0.3 : 0;
       cur.x += (tx - cur.x) * 0.04; cur.y += (ty - cur.y) * 0.04;
       var sc = Math.min(1.2, Math.max(0, window.scrollY / Math.max(H, 1)));
-      var zoom = 1 + 0.03 * (1 - Math.cos(ph * 0.5)) / 2;
+      var zoom = auto ? 1 + 0.03 * (1 - Math.cos(ph * 0.5)) / 2 : 1;
       scene.style.transform = "translate3d(0," + (sc * H * 0.18).toFixed(1) + "px,0) rotateY(" + (cur.x * 2.4 * D).toFixed(3) + "deg) rotateX(" + (-cur.y * 1.6 * D).toFixed(3) + "deg) scale(" + zoom.toFixed(4) + ")";
       layers.forEach(function (L) {
         var k = L.d * D;
@@ -176,7 +176,7 @@
     hero.addEventListener("pointerleave", function () { mouse = null; });
     new IntersectionObserver(function (es) { visible = es[0].isIntersecting; update(); }).observe(hero);
     document.addEventListener("visibilitychange", update);
-    btn.hidden = false;
+    if (auto) btn.hidden = false;           // pause button only when it moves by itself
     btn.addEventListener("click", function () {
       paused = !paused; heroPaused = paused; update();
       btn.querySelector("use").setAttribute("href", paused ? "#i-play" : "#i-pause");
@@ -322,10 +322,13 @@
     g.appendChild(card(1, "calendar", L.reserve));
     g.appendChild(card(2, "tag", L.pricing, big));
     g.appendChild(card(3, "clock", L.duration, dur));
-    var G = L.getThere, ll = G.lat + "," + G.lng;
+    var G = L.getThere, ll = G.lat + "," + G.lng, touch = window.matchMedia && matchMedia("(pointer: coarse)").matches;
     var mapBox = h("div", { class: "log-map" }, [
       h("iframe", { src: "https://maps.google.com/maps?q=" + ll + "&z=13&output=embed", title: tr(G.title), loading: "lazy", referrerpolicy: "no-referrer-when-downgrade" }),
-      h("a", { class: "btn btn-ghost btn-sm", href: "https://www.google.com/maps/search/?api=1&query=" + ll, target: "_blank", rel: "noopener" }, [tr(G.mapButton), icon("arrow")])
+      // on phones open in the same tab, so the phone can hand the link to the Maps app
+      // (some in-app browsers block new windows); on computers open a new tab
+      h("a", { class: "btn btn-ghost btn-sm map-link", href: "https://www.google.com/maps/search/?api=1&query=" + ll,
+               target: touch ? null : "_blank", rel: "noopener" }, [tr(G.mapButton), icon("arrow")])
     ]);
     var gt = card(4, "pin", G, null, "get-there"); gt.appendChild(mapBox); g.appendChild(gt);
     g.appendChild(card(5, "check", L.included, null, "wide"));
@@ -643,7 +646,7 @@
     renderStatic(); renderFacts(); renderRibbon(); renderStops(); renderPartners(); renderLogistics(); renderLogos();
     renderCalendar(); renderGuideLang(); updateSummary();
     if (again) { $$(".reveal").forEach(function (el) { el.classList.add("in"); countUp(el); }); }
-    if (again) { $("#scene").setAttribute("aria-label", tr(S.PHOTOS[(S.heroScene || {}).photo || "parkLandscape"].alt)); }
+    if (again) { $("#scene").setAttribute("aria-label", tr(S.PHOTOS[(S.heroScene || {}).photo || "barbilla1"].alt)); }
   }
   renderContact();
   renderAll(false);
