@@ -295,8 +295,8 @@ window.SITE = {
     tour: {
       eyebrow: { en: "The tour", es: "El tour" },
       title: { en: "Eight stops, one day in the forest", es: "Ocho paradas, un día en el bosque" },
-      intro: { en: "Follow the trail from the park entrance to our own reserve. Every stop tells part of the story of how this forest is protected and restored.",
-               es: "Sigue el sendero desde la entrada del parque hasta nuestra propia reserva. Cada parada cuenta una parte de la historia de cómo se protege y restaura este bosque.", todo: true },
+      intro: { en: "Follow the trail from the Work with Nature reserve to the National Park Barbilla. Every stop tells part of the story of how this forest is protected and restored.",
+               es: "Sigue el sendero desde la reserva Work with Nature hasta el Parque Nacional Barbilla. Cada parada cuenta una parte de la historia de cómo se protege y restaura este bosque." },
       stop: { en: "Stop", es: "Parada" }
     },
     partners: {
