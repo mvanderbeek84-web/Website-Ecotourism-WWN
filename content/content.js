@@ -390,7 +390,7 @@ window.SITE = {
       emailSubject: { en: "Booking request", es: "Solicitud de reserva" }
     },
     footer: {
-      tagline: { en: "Let nature be the light.", es: "Que la naturaleza sea la luz." },
+      tagline: { en: "Make a direct contribution to nature conservation: adopt square meters of rainforest.", es: "Contribuye directamente a la conservación de la naturaleza: adopta metros cuadrados de bosque lluvioso." },
       contact: { en: "Contact", es: "Contacto" },
       partnersTitle: { en: "In cooperation with", es: "En cooperación con" },
       adopt: { en: "Adopt rainforest", es: "Adopta bosque" },
