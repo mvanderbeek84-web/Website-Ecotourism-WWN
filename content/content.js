@@ -201,8 +201,8 @@ window.SITE = {
           key: "macaws",
           tag: { en: "Birding", es: "Aves" },
           title: { en: "Great green macaws", es: "Lapas verdes" },
-          text: { en: "The great green macaw is endangered, with only a few hundred left in Costa Rica. It depends on the almendro tree. With luck, you'll hear them before you see them.",
-                  es: "La lapa verde está en peligro de extinción y quedan solo unos cientos en Costa Rica. Depende del árbol de almendro. Con suerte, las oirás antes de verlas.", todo: true },
+          text: { en: "The great green macaw is critically endangered, with only one thousand individuals left worldwide. We provide them with trees for their specialized diet and for breeding. With luck, you'll hear them before you see them.",
+                  es: "La lapa verde está en peligro crítico de extinción y quedan solo mil individuos en todo el mundo. Les ofrecemos árboles para su dieta especializada y para anidar. Con suerte, las oirás antes de verlas." },
           photos: ["macawFlight", "macawPortrait", "macawCanopy"]
         },
         {
