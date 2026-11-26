@@ -175,8 +175,8 @@ window.SITE = {
           key: "biodiversity",
           tag: { en: "Wildlife", es: "Vida silvestre" },
           title: { en: "Biodiversity", es: "Biodiversidad" },
-          text: { en: "Hummingbirds, vipers, basilisks, glasswing butterflies, motmots and owls. Your guide knows where to look, and what you are looking at.",
-                  es: "Colibríes, víboras, basiliscos, mariposas de alas de cristal, momotos y búhos. Tu guía sabe dónde mirar y qué estás viendo.", todo: true },
+          text: { en: "We have registered over 1,000 animal species in this area, including jaguars, tapirs, eyelash pitvipers, motmots and basilisks. Your guide knows where to look, and what you are looking at.",
+                  es: "Hemos registrado más de 1.000 especies de animales en esta zona, entre ellas el jaguar, la danta, la bocaracá, los momotos y los basiliscos. Tu guía sabe dónde mirar y qué estás viendo." },
           photos: ["hummingbird", "eyelashViper", "basilisk", "glasswing", "aracari", "beetle", "motmot", "owl"],
           layout: "mosaic"
         },
