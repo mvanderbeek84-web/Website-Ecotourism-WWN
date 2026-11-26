@@ -65,7 +65,7 @@ window.SITE = {
     riverGorge:      { file: "reserve-8", alt: { en: "River gorge in the Work with Nature reserve", es: "Cañón del río en la reserva Work with Nature" } },
     sapling:         { file: "img-8814",  alt: { en: "Young native tree planted in a reforestation plot", es: "Árbol nativo joven en un área de reforestación" } },
     guide:           { file: "2t3a7687",  alt: { en: "Smiling local guide in the forest", es: "Guía local sonriente en el bosque" } },
-    tallTree:        { file: "z9a6072",   alt: { en: "Tall emergent tree above the canopy", es: "Árbol emergente sobre el dosel" } },
+    tallTree:        { file: "barbilla4", alt: { en: "Keel-billed toucan in a bare treetop", es: "Tucán pico iris en la copa de un árbol seco" } },
     leafShadow:      { file: "2t3a6020",  alt: { en: "Large rainforest leaves", es: "Grandes hojas del bosque lluvioso" } },
     macawFlight:     { file: "z9a6235",   alt: { en: "Two great green macaws in flight", es: "Dos lapas verdes en vuelo" } },
     macawPortrait:   { file: "z9a6317",   alt: { en: "Great green macaw in a tree", es: "Lapa verde en un árbol" } },
