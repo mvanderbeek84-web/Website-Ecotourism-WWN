@@ -284,9 +284,17 @@
       ul.appendChild(h("li", { class: "partner reveal" }, [visual, h("div", null, [title, text])]));
     });
     var P = S.text.partners;
+    // impact numbers under the intro
+    var st = $("#orgStats"); st.innerHTML = "";
+    (P.stats || []).forEach(function (s) {
+      var lab = h("span"); setText(lab, s.label);
+      st.appendChild(h("li", null, [h("b", null, [tr(s.value)]), lab]));
+    });
+    // other partners, centered under the cards
+    var box = $("#partnerOthers"); box.innerHTML = "";
     if (P.others && P.others.length) {
       var head = h("h3"); setText(head, P.othersTitle);
-      ul.appendChild(h("li", { class: "partner-others reveal" }, [head, h("ul", { class: "chips" }, P.others.map(function (o) {
+      box.appendChild(h("div", { class: "partner-others reveal" }, [head, h("ul", { class: "chips" }, P.others.map(function (o) {
         var note = h("small"); setText(note, o.note);
         return h("li", null, [h("b", null, [o.name]), note]);
       }))]));
@@ -331,6 +339,7 @@
       var L = S.LOGOS[k];
       box.appendChild(h("div", { class: "plate" }, [h("img", { src: L.file, alt: L.name, loading: "lazy" })]));
     });
+    $("#partnersBg").src = "assets/img/" + S.PHOTOS[S.backgrounds.partners].file + "-l.jpg";
     $("#logisticsBg").src = "assets/img/" + S.PHOTOS[S.backgrounds.logistics].file + "-l.jpg";
     $("#bookingBg").src = "assets/img/" + S.PHOTOS[S.backgrounds.booking].file + "-l.jpg";
   }

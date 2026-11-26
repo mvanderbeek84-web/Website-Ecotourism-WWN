@@ -114,6 +114,7 @@ window.SITE = {
 
   /* ---------------- Section background photos (names from PHOTOS) --- */
   backgrounds: {
+    partners: "riverGorge",    // faint, behind "Who organizes the tour"
     logistics: "mistCanopy",   // behind "Everything you need to know"
     booking: "mistTall"        // faint, behind the booking form
   },
@@ -342,6 +343,12 @@ window.SITE = {
           text: { en: "Certified naturalist guides from the communities around the park.", es: "Guías naturalistas certificados de las comunidades alrededor del parque.", todo: true } },
       ],
       /* Other partners, shown as a list under the cards */
+      /* Impact numbers shown under the intro */
+      stats: [
+        { value: { en: "40,000", es: "40.000" }, label: { en: "native trees planted", es: "árboles nativos sembrados" } },
+        { value: { en: "43 ha", es: "43 ha" }, label: { en: "restored", es: "restauradas" } },
+        { value: { en: "1,000+", es: "1.000+" }, label: { en: "species recorded", es: "especies registradas" } }
+      ],
       othersTitle: { en: "Also in cooperation with", es: "También en cooperación con" },
       others: [
         { name: "Stichting Adopteer Regenwoud", note: { en: "Netherlands", es: "Países Bajos" } },
