@@ -330,7 +330,6 @@ window.SITE = {
       othersTitle: { en: "Also in cooperation with", es: "También en cooperación con" },
       others: [
         { name: "Stichting Adopteer Regenwoud", note: { en: "Netherlands", es: "Países Bajos" } },
-        { name: "Tapa Tours and Guide", note: { en: "Local tours and guiding", es: "Tours y guías locales" } },
         { name: "Finca Integral Jardín Mandala", note: { en: "Local farm", es: "Finca local" } },
         { name: "Corredor Biológico Madre de Dios", note: { en: "Biological corridor", es: "Corredor biológico" } },
         { name: "UNESCO World Heritage Site", note: { en: "Talamanca Range–La Amistad Reserves", es: "Reservas de la Cordillera de Talamanca–La Amistad" } }
