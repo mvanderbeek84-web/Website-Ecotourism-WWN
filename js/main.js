@@ -81,7 +81,7 @@
     $$("[data-tour]").forEach(function (el) { setText(el, TOUR[el.getAttribute("data-tour")]); });
     var lt = $("#langToggle");
     lt.querySelectorAll(".lang-seg").forEach(function (s) { s.classList.toggle("on", s.dataset.seg === lang); });
-    lt.setAttribute("aria-label", tr(S.text.langToggle));
+    lt.setAttribute("aria-label", "EN / ES · " + tr(S.text.langToggle));   // includes the visible "EN ES" text (accessibility)
     var vt = $("#motionToggle .sr"); if (vt) vt.textContent = tr(heroPaused ? S.text.hero.play : S.text.hero.pause);
   }
 
@@ -650,5 +650,6 @@
   }
   renderContact();
   renderAll(false);
+  document.documentElement.classList.add("ready");
   setupHero(); fireflies(); setupSteppers(); setupForm(); setupReveal(); setupScroll(); setupUI();
 })();

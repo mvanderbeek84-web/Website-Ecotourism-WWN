@@ -3,6 +3,18 @@
    Colors, type and radii follow the Night Canopy tokens.
    ===================================================================== */
 
+/* Fonts are hosted on this site (no Google Fonts request, so visitors' IP
+   addresses are not sent to Google, and the page shows text sooner). */
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/roboto-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/roboto-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/roboto-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/roboto-slab-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/roboto-slab-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 800; font-display: swap; src: url("../assets/fonts/roboto-slab-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/roboto-mono-latin-500-normal.woff2") format("woff2"); }
+
+.icon-sprite { position: absolute; }
+
 :root {
   /* Brand core */
   --canopy: #4BBC60;
@@ -194,6 +206,8 @@ p { margin: 0; }
     linear-gradient(0deg, var(--night-950) 0%, rgba(11,17,13,.35) 12%, rgba(11,17,13,0) 26%);
 }
 .hero-content { position: relative; padding-top: 140px; }
+/* Keep the hero text hidden for the split second before main.js fills it in, so nothing jumps */
+html:not(.ready) .hero-content, html:not(.ready) .hero-bottom { visibility: hidden; }
 .display { font-weight: 800; font-size: clamp(44px, 8.4vw, 104px); line-height: .98; letter-spacing: -.025em; margin-bottom: 20px; }
 .display .line { display: block; overflow: hidden; padding-bottom: .06em; }
 .display .line > span { display: inline-block; transform: translateY(105%); animation: rise 1s var(--ease) forwards; }

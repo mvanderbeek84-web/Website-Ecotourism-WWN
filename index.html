@@ -3,25 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Security: only load scripts, fonts and images from this site; the map may come from Google Maps.
+       If you add an outside service later (booking form endpoint, analytics, video host), add its address here. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Barbilla Rainforest Tour · Fundación Work with Nature</title>
   <meta name="description" content="Visit National Park Barbilla, sector Matina, Costa Rica. A guided day in the Caribbean lowland rainforest by Fundación Work with Nature.">
   <meta name="theme-color" content="#0B110D">
+
+  <!-- Web address. Change https://www.visitbarbilla.com/ everywhere in this block (and in robots.txt and sitemap.xml) if the domain changes. -->
+  <link rel="canonical" href="https://www.visitbarbilla.com/">
+  <link rel="alternate" hreflang="en" href="https://www.visitbarbilla.com/?lang=en">
+  <link rel="alternate" hreflang="es" href="https://www.visitbarbilla.com/?lang=es">
+  <link rel="alternate" hreflang="x-default" href="https://www.visitbarbilla.com/">
+
+  <!-- How the page looks when shared on WhatsApp, Facebook, LinkedIn, X, etc. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fundación Work with Nature">
+  <meta property="og:title" content="Visit National Park Barbilla · Rainforest tour in Costa Rica">
+  <meta property="og:description" content="A guided day in the Caribbean lowland rainforest of National Park Barbilla, sector Matina, with a local guide. From reforestation to pristine rainforest.">
+  <meta property="og:url" content="https://www.visitbarbilla.com/">
+  <meta property="og:image" content="https://www.visitbarbilla.com/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rainforest canopy with mist in the valleys of Barbilla">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_CR">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="icon" href="assets/logos/adopt-rainforest.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto+Slab:wght@500;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="assets/logos/adopt-rainforest.png">
+  <link rel="preload" href="assets/fonts/roboto-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/roboto-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/roboto-slab-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/roboto-slab-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    /* Always open at the top of the page (no restored scroll position, no #section jump) */
-    (function () {
-      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-      function top() { window.scrollTo(0, 0); }
-      top();
-      window.addEventListener("DOMContentLoaded", top);
-      window.addEventListener("load", function () { top(); setTimeout(top, 0); });
-      window.addEventListener("pageshow", function (e) { if (e.persisted) top(); });
-    })();
+  <script src="js/top.js"></script>
+  <!-- Tour details for Google search results -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Barbilla Rainforest Tour",
+  "description": "A guided day (5–6 hours) in the Caribbean lowland rainforest of National Park Barbilla, sector Matina, Costa Rica, with a certified local guide.",
+  "url": "https://www.visitbarbilla.com/",
+  "image": "https://www.visitbarbilla.com/assets/img/og-image.jpg",
+  "inLanguage": [
+    "en",
+    "es"
+  ],
+  "touristType": [
+    "Nature lovers",
+    "Birdwatchers",
+    "Families"
+  ],
+  "itinerary": {
+    "@type": "Place",
+    "name": "National Park Barbilla, sector Matina",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Limón",
+      "addressCountry": "CR"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "100",
+    "priceCurrency": "USD",
+    "url": "https://www.visitbarbilla.com/#book",
+    "availability": "https://schema.org/InStock"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Fundación Work with Nature",
+    "email": "maarten@adoptrainforest.com",
+    "telephone": "+506 6082 6565",
+    "url": "https://www.visitbarbilla.com/"
+  }
+}
   </script>
 </head>
 <body>
@@ -131,7 +190,7 @@
 
     <!-- ============ 4. BOOKING ============ -->
     <section class="booking" id="book" aria-labelledby="bookTitle">
-      <div class="booking-bg" aria-hidden="true"><img id="bookingBg" alt=""></div>
+      <div class="booking-bg" aria-hidden="true"><img id="bookingBg" alt="" loading="lazy"></div>
       <div class="wrap section-head">
         <p class="eyebrow" data-t="booking.eyebrow"></p>
         <h2 id="bookTitle" data-t="booking.title"></h2>
@@ -265,7 +324,7 @@
   </footer>
 
   <!-- ============ ICONS ============ -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <svg class="icon-sprite" width="0" height="0" aria-hidden="true">
     <defs>
       <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
       <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>

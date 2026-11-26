@@ -6,7 +6,7 @@ tour to National Park Barbilla, sector Matina. Built on the Night Canopy design 
 ## Open it
 
 Double-click `index.html`. It opens in your browser, no installation needed.
-(Fonts load from Google Fonts, so you need an internet connection for the right typeface.)
+The fonts are stored in `assets/fonts/`, so the page looks right even offline.
 
 ## Where things are
 
@@ -17,6 +17,8 @@ Double-click `index.html`. It opens in your browser, no installation needed.
 | Behavior (calendar, language switch, animations) | `js/main.js` (normally no need to touch) |
 | Web-sized photos (small `-s` and large `-l`) | `assets/img/` |
 | Logos | `assets/logos/` |
+| Fonts (Roboto, Roboto Slab, Roboto Mono, latin) | `assets/fonts/` |
+| Search engines and social sharing | top of `index.html`, `robots.txt`, `sitemap.xml`, `assets/img/og-image.jpg` |
 
 ## Changing content
 
@@ -60,7 +62,8 @@ Nothing is stored and nobody pays online yet.
 
 To connect a booking system or form service later, set
 `bookingDelivery: { method: "endpoint", endpointUrl: "https://…" }`; the form then POSTs the
-request as JSON (and falls back to email if that fails).
+request as JSON (and falls back to email if that fails). Also add that service's address to
+`connect-src` in the security line at the top of `index.html` (see below), or the browser blocks it.
 
 ## Adding a second tour
 
@@ -68,3 +71,22 @@ Tours are a list under `tours: [ … ]` in `content.js`. Copy the whole `{ id: "
 block, paste it after the first one (with a comma between them), and change the id and content.
 The page currently shows the first tour; showing several tours (cards + a tour picker in the
 booking form) is the next step when the second tour is ready.
+
+## Web address, search engines and sharing
+
+The page is prepared for **https://www.visitbarbilla.com/**. That address appears in the top of
+`index.html` (canonical, language and sharing tags, and the tour details for Google), in
+`robots.txt` and in `sitemap.xml`. If the domain changes, search-and-replace it in those three files.
+
+- `og-image.jpg` (1200 × 630) is the picture shown when someone shares the link on WhatsApp,
+  Facebook, etc.
+- The Spanish version has its own address: `?lang=es` (English: `?lang=en`).
+
+## Security
+
+- The site has no server, database or login, and it stores no visitor data. A booking request
+  only leaves the visitor's device when they press send in their own email app or WhatsApp.
+  The only thing remembered in the browser is the chosen language (`wwn-lang`).
+- The `Content-Security-Policy` line at the top of `index.html` lets the page load only its own
+  files plus the Google Maps embed. When you add an outside service (form endpoint, analytics,
+  video host, chat widget), add its address to that line, or it will be blocked.
