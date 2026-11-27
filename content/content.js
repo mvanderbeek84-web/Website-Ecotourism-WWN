@@ -18,7 +18,7 @@
 
 window.SITE = {
 
-  showPlaceholderMarkers: true,
+  showPlaceholderMarkers: false,
   defaultLanguage: "en",           // "en" or "es"
 
   /* ---------------- Organization & contact (footer, booking) -------- */
@@ -156,7 +156,7 @@ window.SITE = {
   tours: [
     {
       id: "barbilla-matina",
-      name: { en: "Barbilla Rainforest Discovery", es: "Descubre el Bosque de Barbilla", todo: true },
+      name: { en: "Barbilla Rainforest Discovery", es: "Descubre el Bosque de Barbilla" },
       place: { en: "National Park Barbilla · Sector Matina", es: "Parque Nacional Barbilla · Sector Matina" },
 
       /* Quick facts shown in the hero and booking summary */
@@ -184,7 +184,7 @@ window.SITE = {
           tag: { en: "Protected area", es: "Área protegida" },
           title: { en: "National Park Barbilla", es: "Parque Nacional Barbilla" },
           text: { en: "Step into one of Costa Rica's least-visited national parks, where the Caribbean lowlands rise into the foothills of the Talamanca range. Sector Matina protects rivers, primary forest and an extraordinary diversity of life.",
-                  es: "Entra en uno de los parques nacionales menos visitados de Costa Rica, donde las tierras bajas del Caribe se elevan hacia las faldas de la cordillera de Talamanca. El sector Matina protege ríos, bosque primario y una diversidad de vida extraordinaria.", todo: true },
+                  es: "Entra en uno de los parques nacionales menos visitados de Costa Rica, donde las tierras bajas del Caribe se elevan hacia las faldas de la cordillera de Talamanca. El sector Matina protege ríos, bosque primario y una diversidad de vida extraordinaria." },
           photos: ["riverPool", "parkLandscape", "parrots"]
         },
         {
@@ -370,7 +370,7 @@ window.SITE = {
         { logo: "sinac", title: { en: "SINAC", es: "SINAC" },
           text: { en: "Government partner. Costa Rica's National System of Conservation Areas, which manages National Park Barbilla.", es: "Socio gubernamental. El Sistema Nacional de Áreas de Conservación, que administra el Parque Nacional Barbilla." } },
         { logo: "tapaTours", title: { en: "Licensed local guides", es: "Guías locales con licencia" },
-          text: { en: "Certified naturalist guides from the communities around the park.", es: "Guías naturalistas certificados de las comunidades alrededor del parque.", todo: true } },
+          text: { en: "Certified naturalist guides from the communities around the park.", es: "Guías naturalistas certificados de las comunidades alrededor del parque." } },
       ],
       /* Other partners, shown as a list under the cards */
       /* Impact numbers shown under the intro */
