@@ -86,6 +86,7 @@ body {
   overflow-x: hidden;
 }
 img, video, canvas { display: block; max-width: 100%; }
+picture { display: contents; }   /* <picture> wrappers (AVIF + JPG) do not change the layout */
 a { color: inherit; }
 button { font: inherit; color: inherit; }
 h1, h2, h3, h4 { font-family: var(--f-slab); margin: 0; text-wrap: balance; }

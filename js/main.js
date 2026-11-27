@@ -53,15 +53,42 @@
     var use = document.createElementNS(ns, "use"); use.setAttribute("href", "#i-" + name);
     svg.appendChild(use); return svg;
   }
+  /* Photos: a light AVIF version (assets/img/avif, made by tools/optimize-images.py) with the
+     JPG as fallback for older browsers. If an AVIF file is missing, js/top.js switches to the JPG. */
+  var AVIF_SIZES = [480, 800, 1200, 1800];
+  function avifSrcset(file, extra) {
+    return AVIF_SIZES.concat(extra || []).map(function (w) { return "assets/img/avif/" + file + "-" + w + ".avif " + w + "w"; }).join(", ");
+  }
+  function dropSources(pic) {
+    $$("source", pic).forEach(function (s) { pic.removeChild(s); });
+  }
+  function picture(img, file, sizes) {
+    var pic = h("picture", null, [h("source", { type: "image/avif", srcset: avifSrcset(file), sizes: sizes })]);
+    pic.appendChild(img); return pic;   // a missing AVIF falls back to the JPG (see js/top.js)
+  }
   function photo(key, sizes, eager) {
     var p = S.PHOTOS[key];
     if (!p) return h("div", { class: "missing" });
-    return h("img", {
+    sizes = sizes || "(max-width: 900px) 100vw, 50vw";
+    return picture(h("img", {
       src: "assets/img/" + p.file + "-s.jpg",
       srcset: "assets/img/" + p.file + "-s.jpg 800w, assets/img/" + p.file + "-l.jpg 1800w",
-      sizes: sizes || "(max-width: 900px) 100vw, 50vw",
+      sizes: sizes,
       alt: tr(p.alt), loading: eager ? "eager" : "lazy", decoding: "async"
-    });
+    }), p.file, sizes);
+  }
+  /* Full-width background photos (who we are, practical info, booking) */
+  function setBackground(id, key) {
+    var img = $("#" + id), file = S.PHOTOS[key].file;
+    if (img.dataset.file === file) return;
+    img.dataset.file = file;
+    var pic = img.parentNode.tagName === "PICTURE" ? img.parentNode : null;
+    if (!pic) { pic = document.createElement("picture"); img.parentNode.insertBefore(pic, img); pic.appendChild(img); }
+    dropSources(pic);
+    pic.insertBefore(h("source", { type: "image/avif", srcset: avifSrcset(file), sizes: "100vw" }), img);
+    img.sizes = "100vw";
+    img.srcset = "assets/img/" + file + "-s.jpg 800w, assets/img/" + file + "-l.jpg 1800w";
+    img.src = "assets/img/" + file + "-l.jpg";
   }
   function money(n) {
     try { return new Intl.NumberFormat("en-US", { style: "currency", currency: TOUR.currency, maximumFractionDigits: 0 }).format(n); }
@@ -380,9 +407,9 @@
       var L = S.LOGOS[k];
       box.appendChild(h("div", { class: "plate" }, [h("img", { src: L.file, alt: L.name, loading: "lazy" })]));
     });
-    $("#partnersBg").src = "assets/img/" + S.PHOTOS[S.backgrounds.partners].file + "-l.jpg";
-    $("#logisticsBg").src = "assets/img/" + S.PHOTOS[S.backgrounds.logistics].file + "-l.jpg";
-    $("#bookingBg").src = "assets/img/" + S.PHOTOS[S.backgrounds.booking].file + "-l.jpg";
+    setBackground("partnersBg", S.backgrounds.partners);
+    setBackground("logisticsBg", S.backgrounds.logistics);
+    setBackground("bookingBg", S.backgrounds.booking);
   }
 
   /* =================================================================

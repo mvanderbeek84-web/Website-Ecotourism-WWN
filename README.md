@@ -38,6 +38,10 @@ between the quotes, save, and reload the page.
 2. In `content.js`, under `PHOTOS`, add a line such as
    `myPhoto: { file: "myphoto", alt: { en: "…", es: "…" } },`
 3. Use `"myPhoto"` in the `photos: [...]` list of a tour stop.
+4. Make the light AVIF copies the page normally shows: `python3 tools/optimize-images.py`
+   (needs Python with Pillow 11+). It only redoes photos whose JPG changed.
+   `python3 tools/optimize-images.py --check` tells you if any are out of date.
+   If you forget this step nothing breaks: the page simply shows the (heavier) JPG.
 
 ## Hero background
 
