@@ -359,7 +359,7 @@ window.SITE = {
                es: "Organizamos este tour junto con quienes mejor protegen y conocen este bosque. Tu visita apoya directamente al Parque Nacional, a los guías locales y a la comunidad." },
       items: [
         { logo: "barbilla", title: { en: "National Park Barbilla", es: "Parque Nacional Barbilla" },
-          text: { en: "The national park where the tour takes place. Its rangers protect the forests, rivers and wildlife of Sector Matina.", es: "El parque nacional donde se realiza el tour. Sus guardaparques protegen los bosques, los ríos y la fauna del sector Matina." } },
+          text: { en: "Covers 11,943 ha and is surrounded by protected wilderness areas such as the Río Pacuare Forest Reserve and two Indigenous territories.", es: "Tiene una extensión de 11.943 ha rodeado de Áreas Silvestres Protegidas como la Reserva Forestal Río Pacuare y dos Territorios Indígenas." } },
         { logo: "workWithNature", title: { en: "Fundación Work with Nature", es: "Fundación Work with Nature" },
           text: { en: "Organizer. A Costa Rican foundation restoring rainforest and protecting wildlife on the edge of National Park Barbilla.", es: "Organizador. Una fundación costarricense que restaura el bosque y protege la vida silvestre en el borde del Parque Nacional Barbilla." } },
         { logo: "sinac", title: { en: "SINAC", es: "SINAC" },
