@@ -704,3 +704,20 @@ input:focus, textarea:focus { outline: none; border-color: var(--canopy); box-sh
 .review.is-todo { outline: 1px dashed rgba(242,179,61,.6); outline-offset: 4px; }
 @media (max-width: 1000px) { .review-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .review-grid { grid-template-columns: 1fr; } .review { padding: 22px; } }
+
+/* Header on phones: the logo plate never shrinks (both logos stay on the cream plate);
+   the language switch shows just EN / ES (no flags) and the spacing tightens, so it fits down to 320px. */
+.brand, .brand img, .brand-sep { flex: none; }
+@media (max-width: 640px) {
+  .lang-seg .flag { display: none; }
+  .lang-seg { padding: 0 11px; }
+}
+@media (max-width: 440px) {
+  .site-header { gap: 8px; }
+  .header-actions { gap: 8px; }
+}
+@media (max-width: 350px) {
+  .brand img { height: 36px; }
+  .brand .brand-park { height: 23px; }
+  .brand { gap: 5px; padding: 3px 5px; }
+}
