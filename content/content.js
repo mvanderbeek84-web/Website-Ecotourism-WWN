@@ -404,8 +404,8 @@ window.SITE = {
                    es: "¡Una experiencia increíble! Encontramos una Bocaracá en el sendero y vimos muchísimas aves." },
           name: "Nicolás", country: { en: "France", es: "Francia" }, translated: "es" },
         { quote: { en: "It is a beautiful place. The hike was pretty tough, but the Surubre River was amazing. We saw many Poison Dart Frogs.",
-                   es: "Es un lugar hermoso. La caminata fue bastante dura, pero el río Surubre fue increíble. Vimos muchas Ranas Venenosas." },
-          name: "Kayla", country: { en: "Costa Rica", es: "Costa Rica" }, translated: "es" },
+                   es: "Es un lugar hermoso. La caminata fue bastante dura, pero el río Surubre era increíble. Vimos muchas Ranas Dardo Venenosas." },
+          name: "Kayla", country: { en: "Costa Rica", es: "Costa Rica" }, translated: "en" },
         { quote: { en: "We learned so much from the tour. Our guide showed us medicinal plants, talked about reforestation strategies and we saw many small animals.",
                    es: "Aprendimos muchísimo en el tour. Nuestro guía nos mostró plantas medicinales, nos habló de estrategias de reforestación y vimos muchos animales pequeños." },
           name: "Frank", country: { en: "United States", es: "Estados Unidos" }, translated: "es" }
