@@ -706,17 +706,42 @@
     });
   }
 
+  /* Highlight film: muted loop that plays only while on screen; poster only for reduced motion */
+  var filmLabel = function () {};
+  function setupFilm() {
+    var v = $("#filmVideo"), btn = $("#filmToggle"), sec = $("#film");
+    if (!v || !btn) return;
+    var F = S.text.film || {}, userPaused = reduceMotion, visible = false;
+    filmLabel = function () {
+      v.setAttribute("aria-label", tr(F.label));
+      var playing = !v.paused;
+      btn.querySelector("use").setAttribute("href", playing ? "#i-pause" : "#i-play");
+      btn.querySelector(".sr").textContent = tr(playing ? F.pause : F.play);
+    };
+    function update() {
+      if (!userPaused && visible && !document.hidden) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+      else v.pause();
+    }
+    v.addEventListener("play", filmLabel); v.addEventListener("pause", filmLabel);
+    btn.addEventListener("click", function () { userPaused = !v.paused; if (!userPaused) visible = true; if (userPaused) v.pause(); else { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } });
+    document.addEventListener("visibilitychange", update);
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; update(); }, { threshold: 0.25 }).observe(sec);
+    else { visible = true; update(); }
+    filmLabel();
+  }
+
   /* ---------------- Boot ---------------- */
   function renderAll(again) {
     renderStatic(); renderFacts(); renderRibbon(); renderStops(); renderPartners(); renderReviews(); renderLogistics(); renderLogos();
     renderCalendar(); renderGuideLang(); updateSummary();
     if (again) { $$(".reveal").forEach(function (el) { el.classList.add("in"); countUp(el); }); }
+    filmLabel();
     if (again) { $("#scene").setAttribute("aria-label", tr(S.PHOTOS[(S.heroScene || {}).photo || "barbilla1"].alt)); }
   }
   renderContact();
   renderAll(false);
   document.documentElement.classList.add("ready");
-  setupHero(); fireflies(); setupSteppers(); setupForm(); setupReveal(); setupScroll(); setupUI();
+  setupHero(); setupFilm(); fireflies(); setupSteppers(); setupForm(); setupReveal(); setupScroll(); setupUI();
 
   /* Visitor statistics (GoatCounter), only when a site code is set in content.js.
      Not on a local copy (file://) and not while testing on localhost. */

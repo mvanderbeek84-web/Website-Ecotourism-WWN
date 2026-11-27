@@ -721,3 +721,12 @@ input:focus, textarea:focus { outline: none; border-color: var(--canopy); box-sh
   .brand .brand-park { height: 23px; }
   .brand { gap: 5px; padding: 3px 5px; }
 }
+
+/* ---------------- Highlight film (after the hero) ---------------- */
+.film { position: relative; background: var(--night-950, #070B08); line-height: 0; }
+.film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 88vh; object-fit: cover; background: var(--night-900); }
+.film::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(11,17,13,.35), transparent 14%, transparent 86%, rgba(11,17,13,.45)); }
+.film-toggle { position: absolute; right: var(--gutter); bottom: 20px; z-index: 1; color: var(--mist); }
+@media (max-width: 640px) { .film-toggle { position: absolute; top: auto; bottom: 12px; right: 12px; } }
+.ribbon { padding-bottom: 48px; }

@@ -147,10 +147,14 @@
       </div>
     </section>
 
-    <!-- ============ MOVING PHOTO RIBBON ============ -->
-    <section class="ribbon" aria-hidden="true">
-      <div class="ribbon-track" id="ribbonA"></div>
-      <div class="ribbon-track reverse" id="ribbonB"></div>
+    <!-- ============ HIGHLIGHT FILM ============ -->
+    <section class="film" id="film">
+      <video id="filmVideo" muted loop playsinline preload="none" poster="assets/video/barbilla-highlights-poster.jpg" width="1280" height="720">
+        <source src="assets/video/barbilla-highlights.mp4" type="video/mp4">
+      </video>
+      <button class="video-toggle film-toggle" type="button" id="filmToggle">
+        <svg class="ic" aria-hidden="true"><use href="#i-play"/></svg><span class="sr"></span>
+      </button>
     </section>
 
     <!-- ============ 1. THE TOUR ============ -->
@@ -189,15 +193,6 @@
         <h2 id="logTitle" data-t="logistics.title"></h2>
       </div>
       <div class="wrap log-grid" id="logGrid"></div>
-    </section>
-
-    <!-- ============ GUEST REVIEWS (hidden until content.js has reviews) ============ -->
-    <section class="reviews" id="reviews" aria-labelledby="reviewsTitle" hidden>
-      <div class="wrap section-head">
-        <p class="eyebrow" data-t="reviews.eyebrow"></p>
-        <h2 id="reviewsTitle" data-t="reviews.title"></h2>
-      </div>
-      <div class="wrap review-grid" id="reviewGrid"></div>
     </section>
 
     <!-- ============ 4. BOOKING ============ -->
@@ -285,6 +280,21 @@
           </aside>
         </div>
       </form>
+    </section>
+
+    <!-- ============ GUEST REVIEWS (hidden until content.js has reviews) ============ -->
+    <section class="reviews" id="reviews" aria-labelledby="reviewsTitle" hidden>
+      <div class="wrap section-head">
+        <p class="eyebrow" data-t="reviews.eyebrow"></p>
+        <h2 id="reviewsTitle" data-t="reviews.title"></h2>
+      </div>
+      <div class="wrap review-grid" id="reviewGrid"></div>
+    </section>
+
+    <!-- ============ MOVING PHOTO RIBBON ============ -->
+    <section class="ribbon" aria-hidden="true">
+      <div class="ribbon-track" id="ribbonA"></div>
+      <div class="ribbon-track reverse" id="ribbonB"></div>
     </section>
 
     <!-- ============ ADOPT RAINFOREST (donation) ============ -->

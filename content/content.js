@@ -395,6 +395,11 @@ window.SITE = {
            link: { label: "Google", url: "https://..." },    // where the review was posted (optional)
            translated: "es" },         // language in which the quote is a translation; shows a small "translated" note
        Only use real reviews from real guests, with their permission.            */
+    film: {
+      label: { en: "Short film: rainforest and wildlife of Barbilla", es: "Video corto: bosque lluvioso y vida silvestre de Barbilla" },
+      play: { en: "Play video", es: "Reproducir video" },
+      pause: { en: "Pause video", es: "Pausar video" }
+    },
     reviews: {
       eyebrow: { en: "Guest reviews", es: "Opiniones de visitantes" },
       title: { en: "What our guests say", es: "Lo que dicen nuestros visitantes" },
