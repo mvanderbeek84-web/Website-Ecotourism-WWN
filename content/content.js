@@ -392,12 +392,24 @@ window.SITE = {
            date: "2026-11",            // year-month of the visit (optional)
            stars: 5,                   // 1 to 5 (optional)
            photo: "assets/img/review-anna.jpg",              // small portrait (optional)
-           link: { label: "Google", url: "https://..." } },  // where the review was posted (optional)
+           link: { label: "Google", url: "https://..." },    // where the review was posted (optional)
+           translated: "es" },         // language in which the quote is a translation; shows a small "translated" note
        Only use real reviews from real guests, with their permission.            */
     reviews: {
       eyebrow: { en: "Guest reviews", es: "Opiniones de visitantes" },
       title: { en: "What our guests say", es: "Lo que dicen nuestros visitantes" },
-      items: [ ]
+      translatedNote: { en: "Translated from Spanish", es: "Traducido del inglés" },
+      items: [
+        { quote: { en: "An amazing experience! We found an Eyelash Pitviper along the trail and saw lots of birds!",
+                   es: "¡Una experiencia increíble! Encontramos una Bocaracá en el sendero y vimos muchísimas aves." },
+          name: "Nicolás", country: { en: "France", es: "Francia" }, translated: "es" },
+        { quote: { en: "It is a beautiful place. The hike was pretty tough, but the Surubre River was amazing. We saw many Poison Dart Frogs.",
+                   es: "Es un lugar hermoso. La caminata fue bastante dura, pero el río Surubre fue increíble. Vimos muchas Ranas Venenosas." },
+          name: "Kayla", country: { en: "Costa Rica", es: "Costa Rica" }, translated: "es" },
+        { quote: { en: "We learned so much from the tour. Our guide showed us medicinal plants, talked about reforestation strategies and we saw many small animals.",
+                   es: "Aprendimos muchísimo en el tour. Nuestro guía nos mostró plantas medicinales, nos habló de estrategias de reforestación y vimos muchos animales pequeños." },
+          name: "Frank", country: { en: "United States", es: "Estados Unidos" }, translated: "es" }
+      ]
     },
     logistics: {
       eyebrow: { en: "Practical info", es: "Información práctica" },

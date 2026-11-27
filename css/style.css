@@ -699,6 +699,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--canopy); box-sh
 .review-who b { display: block; font: 500 16px/22px var(--f-sans); }
 .review-who span { font-size: 13px; color: var(--lichen); }
 .review-link { margin-left: auto; font-size: 13px; color: var(--canopy-300); }
+.review-note { margin: -8px 0 0; font-size: 12px; font-style: italic; color: var(--lichen); }
 .review.is-todo { outline: 1px dashed rgba(242,179,61,.6); outline-offset: 4px; }
 @media (max-width: 1000px) { .review-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .review-grid { grid-template-columns: 1fr; } .review { padding: 22px; } }

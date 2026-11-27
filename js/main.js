@@ -301,7 +301,8 @@
         h("div", null, [h("b", null, [tr(r.name)]), h("span", null, [meta.filter(Boolean).join(" · ")])]),
         r.link && r.link.url ? h("a", { class: "review-link", href: r.link.url, target: "_blank", rel: "noopener" }, [tr(r.link.label)]) : null
       ]);
-      var card = h("figure", { class: "review reveal" + (r.todo && S.showPlaceholderMarkers ? " is-todo" : "") }, [stars, q, h("figcaption", null, [who])]);
+      var note = r.translated === lang && R.translatedNote ? h("p", { class: "review-note" }, [tr(R.translatedNote)]) : null;
+      var card = h("figure", { class: "review reveal" + (r.todo && S.showPlaceholderMarkers ? " is-todo" : "") }, [stars, q, note, h("figcaption", null, [who])]);
       grid.appendChild(card);
     });
   }
