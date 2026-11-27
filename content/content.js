@@ -54,19 +54,21 @@ window.SITE = {
   },
 
   /* ---------------- Hero background ---------------------------------
-     The hero is photo Barbilla1 (assets/img/hero-barbilla1-l/-s.jpg).
+     The hero is photo heroCanopy (assets/img/hero-canopy-l/-s.jpg, a frame from the highlight film).
+     The earlier hero photo is still available as "barbilla1".
      On a computer it moves and tilts slightly with the mouse.
      photo:      short name from PHOTOS (used for the description text).
      depth:      how much it moves (0 = still, 1 = normal, 1.5 = more).
      autoMove:   true = also pan slowly by itself (and on phones).        */
   heroScene: {
-    photo: "barbilla1",
+    photo: "heroCanopy",
     depth: 1,
     autoMove: false
   },
 
   /* ---------------- Photos (short name -> file) -------------------- */
   PHOTOS: {
+    heroCanopy:      { file: "hero-canopy", alt: { en: "Rainforest canopy of Barbilla seen from above", es: "Dosel del bosque lluvioso de Barbilla visto desde arriba" } },
     barbilla1:       { file: "hero-barbilla1", alt: { en: "Rainforest canopy with mist in the valleys of Barbilla", es: "Dosel del bosque lluvioso con neblina en los valles de Barbilla" } },
     parkLandscape:   { file: "img-6978",  alt: { en: "Forested hills of the Talamanca foothills", es: "Colinas boscosas al pie de la Talamanca" } },
     mistCanopy:      { file: "reserve-3", alt: { en: "Morning mist over the rainforest canopy", es: "Neblina matutina sobre el dosel del bosque" } },
