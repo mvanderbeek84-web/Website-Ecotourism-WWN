@@ -39,7 +39,7 @@ window.SITE = {
      "visitbarbilla"), and put it here between the quotes. null = off.
      Your statistics are then at https://<code>.goatcounter.com (only you can log in). */
   analytics: {
-    goatcounterCode: null
+    goatcounterCode: "visitbarbilla"
   },
 
   /* ---------------- Where booking requests go ----------------------
