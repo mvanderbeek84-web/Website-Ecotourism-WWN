@@ -730,3 +730,10 @@ input:focus, textarea:focus { outline: none; border-color: var(--canopy); box-sh
 .film-toggle { position: absolute; right: var(--gutter); bottom: 20px; z-index: 1; color: var(--mist); }
 @media (max-width: 640px) { .film-toggle { position: absolute; top: auto; bottom: 12px; right: 12px; } }
 .ribbon { padding-bottom: 48px; }
+
+/* hero: soft dark shade behind the green "Barbilla" line (like the grey sky behind line 1).
+   The line clips only at the bottom (for the rise animation), so the shade can spread up and sideways. */
+.hero-panel .display .line.accent { overflow: visible; clip-path: inset(-1em -1em 0 -1em); }
+.hero-panel .display .line.accent > span { position: relative; text-shadow: 0 1px 2px rgba(11,17,13,.45); }
+.hero-panel .display .line.accent > span::before { content: ""; position: absolute; z-index: -1; inset: -.3em -.7em -.06em;
+  background: radial-gradient(closest-side, rgba(11,17,13,.62), rgba(11,17,13,.5) 55%, rgba(11,17,13,0)); pointer-events: none; }
