@@ -271,6 +271,41 @@
   }
 
   /* ---------------- Partners ---------------- */
+  /* ---------------- Guest reviews ---------------- */
+  function renderReviews() {
+    var R = S.text.reviews || {}, items = (R.items || []).slice(), sec = $("#reviews"), grid = $("#reviewGrid");
+    if (!sec || !grid) return;
+    // design preview only: index.html?reviews=demo shows empty placeholder cards
+    if (!items.length && /[?&]reviews=demo\b/.test(location.search)) {
+      items = [1, 2, 3].map(function () { return { quote: { en: "The guest's review text goes here.", es: "Aquí va el texto de la opinión." },
+        name: { en: "First name", es: "Nombre" }, country: { en: "Country", es: "País" }, date: "2026-11", stars: 5, todo: true }; });
+    }
+    sec.hidden = !items.length;
+    grid.innerHTML = "";
+    items.forEach(function (r) {
+      var q = h("blockquote", { class: "review-quote" });
+      q.textContent = tr(r.quote);
+      if (typeof r.quote === "string" && r.quoteLang) q.setAttribute("lang", r.quoteLang);
+      var stars = null;
+      if (r.stars) {
+        stars = h("div", { class: "review-stars", role: "img", "aria-label": r.stars + " / 5" });
+        for (var i = 1; i <= 5; i++) stars.appendChild(icon("hex", i <= r.stars ? "on" : ""));
+      }
+      var meta = [tr(r.country)];
+      if (r.date) {
+        var d = new Date(r.date + "-01T12:00:00");
+        if (!isNaN(d)) meta.push(d.toLocaleDateString(lang === "es" ? "es-CR" : "en-US", { month: "long", year: "numeric" }));
+      }
+      var who = h("div", { class: "review-who" }, [
+        r.photo ? h("img", { src: r.photo, alt: "", loading: "lazy", width: "48", height: "48" }) : h("span", { class: "review-initial", "aria-hidden": "true" }, [tr(r.name).charAt(0)]),
+        h("div", null, [h("b", null, [tr(r.name)]), h("span", null, [meta.filter(Boolean).join(" · ")])]),
+        r.link && r.link.url ? h("a", { class: "review-link", href: r.link.url, target: "_blank", rel: "noopener" }, [tr(r.link.label)]) : null
+      ]);
+      var card = h("figure", { class: "review reveal" + (r.todo && S.showPlaceholderMarkers ? " is-todo" : "") }, [stars, q, h("figcaption", null, [who])]);
+      grid.appendChild(card);
+    });
+  }
+
   function renderPartners() {
     var ul = $("#partnerList"); ul.innerHTML = "";
     S.text.partners.items.forEach(function (p, i) {
@@ -645,7 +680,7 @@
 
   /* ---------------- Boot ---------------- */
   function renderAll(again) {
-    renderStatic(); renderFacts(); renderRibbon(); renderStops(); renderPartners(); renderLogistics(); renderLogos();
+    renderStatic(); renderFacts(); renderRibbon(); renderStops(); renderPartners(); renderReviews(); renderLogistics(); renderLogos();
     renderCalendar(); renderGuideLang(); updateSummary();
     if (again) { $$(".reveal").forEach(function (el) { el.classList.add("in"); countUp(el); }); }
     if (again) { $("#scene").setAttribute("aria-label", tr(S.PHOTOS[(S.heroScene || {}).photo || "barbilla1"].alt)); }

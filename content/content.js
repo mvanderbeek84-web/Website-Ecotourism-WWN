@@ -257,7 +257,7 @@ window.SITE = {
       ],
 
       /* Logistics cards */
-      logistics: {
+    logistics: {
         reserve: {
           title: { en: "How to book", es: "Cómo reservar" },
           text: { en: "Choose a date and group size below and send your request by email or WhatsApp (6082-6565). Book at least 2 days ahead. We'll get back to you to check availability and agree on a start time. Your booking is final once you receive our confirmation.",
@@ -384,6 +384,20 @@ window.SITE = {
         { name: "Corredor Biológico Madre de Dios", note: { en: "Biological corridor", es: "Corredor biológico" } },
         { name: "UNESCO World Heritage Site", note: { en: "Talamanca Range–La Amistad Reserves", es: "Reservas de la Cordillera de Talamanca–La Amistad" } }
       ]
+    },
+      /* Guest reviews. The section stays hidden until "items" has at least one review.
+       Add one block per review, for example:
+         { quote: { en: "English text", es: "Texto en español" },   // or one language: quote: "Text", quoteLang: "nl"
+           name: "First name", country: { en: "Netherlands", es: "Países Bajos" },
+           date: "2026-11",            // year-month of the visit (optional)
+           stars: 5,                   // 1 to 5 (optional)
+           photo: "assets/img/review-anna.jpg",              // small portrait (optional)
+           link: { label: "Google", url: "https://..." } },  // where the review was posted (optional)
+       Only use real reviews from real guests, with their permission.            */
+    reviews: {
+      eyebrow: { en: "Guest reviews", es: "Opiniones de visitantes" },
+      title: { en: "What our guests say", es: "Lo que dicen nuestros visitantes" },
+      items: [ ]
     },
     logistics: {
       eyebrow: { en: "Practical info", es: "Información práctica" },
