@@ -711,7 +711,7 @@
   function setupFilm() {
     var v = $("#filmVideo"), btn = $("#filmToggle"), sec = $("#film");
     if (!v || !btn) return;
-    var F = S.text.film || {}, userPaused = reduceMotion, visible = false;
+    var F = S.text.film || {}, userPaused = reduceMotion || saveData, visible = false;   // no autoplay with "reduce motion" or data saver on
     filmLabel = function () {
       v.setAttribute("aria-label", tr(F.label));
       var playing = !v.paused;
