@@ -97,6 +97,7 @@ See the numbers at `https://<code>.goatcounter.com`.
 - The site has no server, database or login, and it stores no visitor data. A booking request
   only leaves the visitor's device when they press send in their own email app or WhatsApp.
   The only thing remembered in the browser is the chosen language (`wwn-lang`).
+- `_headers` adds real security headers (HTTPS-only, no embedding in other sites, no camera/microphone/location access) and a 1-day browser cache for `assets/`, on Cloudflare hosting.
 - The `Content-Security-Policy` line at the top of `index.html` lets the page load only its own
   files plus the Google Maps embed and GoatCounter. When you add an outside service (form endpoint, analytics,
   video host, chat widget), add its address to that line, or it will be blocked.
