@@ -288,7 +288,10 @@ window.SITE = {
           text: { en: "You need your own 4x4 vehicle to reach the starting point. Your guide meets you there at the agreed time. There is parking on the property.",
                   es: "Necesitas tu propio vehículo 4x4 para llegar al punto de inicio. Tu guía te espera allí a la hora acordada. Hay parqueo dentro de la propiedad." },
           mapButton: { en: "Open in Google Maps", es: "Abrir en Google Maps" },
-          // starting point (latitude, longitude); the map pin and the button use these
+          // the "Open in Google Maps" button opens this Google Maps place (the shared link)
+          mapLink: "https://maps.app.goo.gl/RnuqNUEQ2dZwNyMf6",
+          mapLabel: "Fundación Work with Nature",
+          // starting point (latitude, longitude); the embedded map pin uses these
           lat: 9.994860418201526,
           lng: -83.36365245973658
         },

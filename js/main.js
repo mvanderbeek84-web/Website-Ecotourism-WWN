@@ -326,10 +326,10 @@
     g.appendChild(card(3, "clock", L.duration, dur));
     var G = L.getThere, ll = G.lat + "," + G.lng, touch = window.matchMedia && matchMedia("(pointer: coarse)").matches;
     var mapBox = h("div", { class: "log-map" }, [
-      h("iframe", { src: "https://maps.google.com/maps?q=" + ll + "&z=13&output=embed", title: tr(G.title), loading: "lazy", referrerpolicy: "no-referrer-when-downgrade" }),
+      h("iframe", { src: "https://maps.google.com/maps?q=" + ll + (G.mapLabel ? "+(" + encodeURIComponent(G.mapLabel) + ")" : "") + "&z=13&output=embed", title: tr(G.title), loading: "lazy", referrerpolicy: "no-referrer-when-downgrade" }),
       // on phones open in the same tab, so the phone can hand the link to the Maps app
       // (some in-app browsers block new windows); on computers open a new tab
-      h("a", { class: "btn btn-ghost btn-sm map-link", href: "https://www.google.com/maps/search/?api=1&query=" + ll,
+      h("a", { class: "btn btn-ghost btn-sm map-link", href: G.mapLink || ("https://www.google.com/maps/search/?api=1&query=" + ll),
                target: touch ? null : "_blank", rel: "noopener" }, [tr(G.mapButton), icon("arrow")])
     ]);
     var gt = card(4, "pin", G, null, "get-there"); gt.appendChild(mapBox); g.appendChild(gt);
